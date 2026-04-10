@@ -1,0 +1,29 @@
+﻿# Logs
+*.log
+*.log.*
+
+# Env
+.env
+.env.*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+
+# Databricks auth (NUNCA subir)
+.databrickscfg
+databricks_token.txt
+
+# Dados sensíveis
+secrets/
+
+# Dados brutos / dumps
+monday_raw.json
+query.json
+schema_disparo.json
+daily_now*.log
+run_daily_now.py
