@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Growth & CRM — Fechamento Março 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+<style>
+:root{--bg:#F8FAFC;--bg-alt:#F1F5F9;--bg-card:#FFFFFF;--text:#1E293B;--text-muted:#64748B;--text-dim:#94A3B8;--green:#16A34A;--green-soft:rgba(22,163,74,0.10);--red:#DC2626;--red-soft:rgba(220,38,38,0.08);--yellow:#D97706;--yellow-soft:rgba(217,119,6,0.08);--blue:#2563EB;--blue-soft:rgba(37,99,235,0.08);--purple:#7C3AED;--purple-soft:rgba(124,58,237,0.08);--border:rgba(0,0,0,0.08);--border-light:rgba(0,0,0,0.12)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+section{min-height:100vh;padding:72px 28px 56px;display:flex;align-items:center;justify-content:center}.container{max-width:1100px;width:100%}
+.section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--green);margin-bottom:6px;padding-left:14px;position:relative}
+.section-label::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:3px;height:13px;background:var(--green);border-radius:2px}
+h1{font-size:clamp(28px,5vw,48px);font-weight:900;line-height:1.1;margin-bottom:10px}h2{font-size:clamp(20px,3vw,32px);font-weight:800;line-height:1.15;margin-bottom:8px}h3{font-size:16px;font-weight:700;margin-bottom:6px}.subtitle{font-size:15px;color:var(--text-muted);max-width:720px;margin-bottom:24px}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:18px;transition:all 0.3s ease;box-shadow:0 1px 3px rgba(0,0,0,0.04)}.card:hover{border-color:var(--border-light)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.kpi{text-align:center;padding:18px 12px}.kpi .value{font-size:30px;font-weight:900;line-height:1}.kpi .label{font-size:12px;color:var(--text-muted);margin-bottom:5px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px}.kpi .badges{margin-top:8px;display:flex;gap:5px;justify-content:center;flex-wrap:wrap}
+.tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.3px;padding:2px 7px;border-radius:8px;text-transform:uppercase}.tag-green{background:var(--green-soft);color:var(--green)}.tag-red{background:var(--red-soft);color:var(--red)}.tag-yellow{background:var(--yellow-soft);color:var(--yellow)}.tag-blue{background:var(--blue-soft);color:var(--blue)}.tag-purple{background:var(--purple-soft);color:var(--purple)}
+table{width:100%;border-collapse:collapse;font-size:12px}th{text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-dim);padding:7px 10px;border-bottom:1px solid var(--border-light)}td{padding:7px 10px;border-bottom:1px solid var(--border)}.r{text-align:right}.g{color:var(--green);font-weight:600}.rd{color:var(--red);font-weight:600}.y{color:var(--yellow);font-weight:600}
+.share-bar-container{display:flex;height:36px;border-radius:8px;overflow:hidden;margin:12px 0 8px}.share-bar-segment{display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:white;transition:all 0.3s}
+.share-legend{display:flex;gap:20px;font-size:11px;color:var(--text-muted);margin-top:4px;flex-wrap:wrap}.share-legend-item{display:flex;align-items:center;gap:6px}.share-dot{width:8px;height:8px;border-radius:50%}
+.chart-container{position:relative;width:100%}.chart-container canvas{width:100%!important}
+.mom-footer{display:flex;gap:16px;margin-top:10px;padding:10px 14px;background:rgba(0,0,0,0.02);border-radius:8px;font-size:11px;color:var(--text-muted);flex-wrap:wrap}.mom-item{display:flex;align-items:center;gap:4px}
+.insight-box{margin-top:16px;padding:14px 18px;border-radius:10px;font-size:12px;color:var(--text-muted);line-height:1.6}
+.insight-box strong{color:var(--text)}
+.insight-pos{border-left:3px solid var(--green);background:linear-gradient(135deg,rgba(22,163,74,0.05) 0%,#fff 100%)}
+.insight-neg{border-left:3px solid var(--red);background:linear-gradient(135deg,rgba(220,38,38,0.05) 0%,#fff 100%)}
+.insight-warn{border-left:3px solid var(--yellow);background:linear-gradient(135deg,rgba(217,119,6,0.05) 0%,#fff 100%)}
+.insight-neutral{border-left:3px solid var(--blue);background:linear-gradient(135deg,rgba(37,99,235,0.05) 0%,#fff 100%)}
+.footnote{color:var(--text-dim);font-size:10px;margin-top:10px;line-height:1.5;padding:8px 12px;background:rgba(0,0,0,0.02);border-radius:6px}
+#hero{background:linear-gradient(135deg,#F8FAFC 0%,#E2E8F0 40%,#CBD5E1 100%);position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;top:-150px;right:-150px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(22,163,74,0.06) 0%,transparent 70%);animation:glow 4s ease-in-out infinite}
+@keyframes glow{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.1);opacity:.8}}
+@media(max-width:800px){section{padding:60px 14px 36px}.grid-2,.grid-3{grid-template-columns:1fr}}
+.section-num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--green);color:white;font-size:12px;font-weight:800;margin-right:8px}
+</style>
+</head>
+<body>
+
+<!-- ==================== S1: BIG NUMBERS ==================== -->
+<section id="hero">
+  <div class="container" style="position:relative;z-index:1;">
+    <div>
+      <div class="section-label"><span class="section-num">1.1</span> Volumetria — Big Numbers</div>
+      <h1>Growth & CRM<br><span style="color:var(--green)">Fechamento Março 2026</span></h1>
+      <p class="subtitle">Março marca a estreia das campanhas de rádio, que responderam por 60% dos envios com sucesso. Volume total estável (+0,5%), mas usuários abordados caem 13% e frequência sobe pra 6,32 envios/usuário.</p>
+    </div>
+    <div class="grid-3" style="margin-top:28px;">
+      <div class="card kpi"><div class="label">Comunicações Enviadas</div><div class="value">209,6M</div><div class="badges"><span class="tag tag-green">+0,5% MoM</span></div></div>
+      <div class="card kpi"><div class="label">Envios com Sucesso</div><div class="value">186,3M</div><div class="badges"><span class="tag tag-red">-2,3% MoM</span></div></div>
+      <div class="card kpi"><div class="label">% Entrega</div><div class="value">88,9%</div><div class="badges"><span class="tag tag-red">-2,6 pp MoM</span></div></div>
+    </div>
+    <div class="grid-3" style="margin-top:10px;">
+      <div class="card kpi"><div class="label">Usuários Abordados (sucesso)</div><div class="value">29,5M</div><div class="badges"><span class="tag tag-red">-13,1% MoM</span></div></div>
+      <div class="card kpi"><div class="label">Campanhas Ativas</div><div class="value">76</div><div class="badges"><span class="tag tag-green">+4,1% MoM</span></div></div>
+      <div class="card kpi"><div class="label">Produtos por Cliente</div><div class="value">3,08</div><div class="badges"><span class="tag tag-green">+18,5% MoM</span></div></div>
+    </div>
+    <div class="grid-3" style="margin-top:10px;">
+      <div class="card kpi"><div class="label">Frequência (envios/usuário)</div><div class="value">6,32</div><div class="badges"><span class="tag tag-green">+12,5% MoM</span></div></div>
+      <div class="card kpi"><div class="label">Disparos de Rádio</div><div class="value" style="color:var(--yellow)">112,2M</div><div class="badges"><span class="tag tag-yellow">60,3% do total com sucesso</span></div></div>
+      <div class="card kpi">
+        <div class="label">Share por Vertical</div>
+        <div style="margin-top:8px;"><div class="badges" style="flex-direction:column;align-items:center;gap:4px;">
+          <span class="tag tag-green">Banking 69,9%</span>
+          <span class="tag tag-blue">Payments 28,5%</span>
+          <span class="tag tag-purple">Segmentos 1,6%</span>
+        </div></div>
+      </div>
+    </div>
+    <div style="margin-top:16px;">
+      <div class="share-bar-container">
+        <div class="share-bar-segment" style="width:69.9%;background:var(--green);">Banking 69,9%</div>
+        <div class="share-bar-segment" style="width:28.5%;background:var(--blue);">Payments 28,5%</div>
+        <div class="share-bar-segment" style="width:1.6%;background:var(--purple);font-size:0px;"></div>
+      </div>
+      <div class="share-legend">
+        <div class="share-legend-item"><div class="share-dot" style="background:var(--green)"></div> Banking: 130,3M</div>
+        <div class="share-legend-item"><div class="share-dot" style="background:var(--blue)"></div> Payments: 53,1M</div>
+        <div class="share-legend-item"><div class="share-dot" style="background:var(--purple)"></div> Segmentos: 2,9M</div>
+      </div>
+    </div>
+    <div class="mom-footer" style="margin-top:14px;">
+      <div class="mom-item"><strong>Fev/26:</strong> 208,6M enviados | 190,8M sucesso | 91,5% entrega | 34,0M usuários | 73 campanhas | 2,60 prod/cli | 5,62 freq | Rádio: 41,1M (21,6%)</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== S4: RANKING CAMPANHAS ==================== -->
+<section style="background:var(--bg-alt);">
+  <div class="container">
+    <div>
+      <div class="section-label"><span class="section-num">1.2</span> Principais Campanhas</div>
+      <h2>Ranking de Campanhas — Março 2026</h2>
+      <p class="subtitle">Primeira operação de rádio: 5 campanhas geraram 112,2M envios (60,3% do total). Sem rádio, PicPay Mais lidera com 21,7M envios.</p>
+    </div>
+    <div class="grid-2" style="margin-top:20px;">
+      <div class="card" style="border-left:3px solid var(--yellow);background:linear-gradient(135deg,rgba(217,119,6,0.05) 0%,#fff 100%);">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+          <div><span class="tag tag-yellow">Rádio</span><h3 style="margin-top:8px;">Campanhas de Rádio</h3></div>
+          <div style="text-align:right;"><div style="font-size:24px;font-weight:900;color:var(--yellow);">112,2M</div><div style="font-size:11px;color:var(--text-muted);">60,3% do total</div></div>
+        </div>
+        <table>
+          <thead><tr><th>Campanha</th><th class="r">Volume</th><th class="r">%</th></tr></thead>
+          <tbody>
+            <tr><td>Rádio — Open Finance</td><td class="r">36,4M</td><td class="r y">19,5%</td></tr>
+            <tr><td>Rádio — Rendimento de Conta</td><td class="r">34,5M</td><td class="r y">18,5%</td></tr>
+            <tr><td>Rádio — Cofrinhos</td><td class="r">25,3M</td><td class="r y">13,6%</td></tr>
+            <tr><td>Rádio — Assist. Pagamento</td><td class="r">15,8M</td><td class="r y">8,5%</td></tr>
+            <tr><td>Epic | Campanha Rádio</td><td class="r">0,2M</td><td class="r">0,1%</td></tr>
+            <tr style="border-top:1px solid var(--border-light);"><td><strong>Total Rádio</strong></td><td class="r"><strong>112,2M</strong></td><td class="r"><strong>60,3%</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card" style="border-left:3px solid var(--blue);background:linear-gradient(135deg,rgba(37,99,235,0.05) 0%,#fff 100%);">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+          <div><span class="tag tag-blue">Não-Rádio</span><h3 style="margin-top:8px;">Top 10 Campanhas</h3></div>
+          <div style="text-align:right;"><div style="font-size:24px;font-weight:900;color:var(--blue);">74,1M</div><div style="font-size:11px;color:var(--text-muted);">39,7% do total</div></div>
+        </div>
+        <table>
+          <thead><tr><th>Campanha</th><th>BU</th><th class="r">Volume</th></tr></thead>
+          <tbody>
+            <tr><td>PicPay Mais | Benefícios Segmentados</td><td><span class="tag tag-green">Bank</span></td><td class="r">21,7M</td></tr>
+            <tr><td>Ativação/Reativação — CB Progressivo</td><td><span class="tag tag-blue">Pay</span></td><td class="r">10,9M</td></tr>
+            <tr><td>Área Veículos | Antecipação IPVA</td><td><span class="tag tag-blue">Pay</span></td><td class="r">6,7M</td></tr>
+            <tr><td>Cofrinhos (briefing 11583267449)</td><td><span class="tag tag-green">Bank</span></td><td class="r">4,2M</td></tr>
+            <tr><td>NBO — Modelo de Cashback</td><td><span class="tag tag-blue">Pay</span></td><td class="r">4,1M</td></tr>
+            <tr><td>Blast — Ativação e Reativação Taxa</td><td><span class="tag tag-blue">Pay</span></td><td class="r">3,3M</td></tr>
+            <tr><td>Alto Propenso — 12X/10%</td><td><span class="tag tag-blue">Pay</span></td><td class="r">2,7M</td></tr>
+            <tr><td>Alto Propenso — 12X/12%</td><td><span class="tag tag-blue">Pay</span></td><td class="r">2,7M</td></tr>
+            <tr><td>Cadastro Chave Pix</td><td><span class="tag tag-blue">Pay</span></td><td class="r">2,5M</td></tr>
+            <tr><td>Cofrinhos | Régua Cofrinho Turbinado</td><td><span class="tag tag-green">Bank</span></td><td class="r">2,1M</td></tr>
+            <tr style="border-top:1px solid var(--border-light);"><td colspan="2"><strong>Top 10 Não-Rádio</strong></td><td class="r"><strong>60,9M</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="insight-box insight-warn" style="margin-top:16px;">
+      <strong>Diagnóstico — Concentração de volume:</strong> PicPay Mais | Benefícios Segmentados lidera o não-rádio com 21,7M envios (11,6% do total) — volume massivo de InApp+Push+Email. 5 campanhas de rádio concentram 60,3% do total — risco de dependência. No não-rádio, Banking ocupa 3 das 10 posições (28,1M), Payments as outras 7 (32,9M). A campanha de Cofrinhos (briefing_id 11583267449, 4,2M envios) não tem registro no book — recomendável regularizar pra rastreabilidade.
+    </div>
+  </div>
+</section>
+
+<!-- ==================== S2: CANAIS 6 MESES ==================== -->
+<section>
+  <div class="container">
+    <div>
+      <div class="section-label"><span class="section-num">1.3</span> Série Histórica — Canais</div>
+      <h2>Disparos por Canal — 6 Meses</h2>
+      <p class="subtitle">InApp explode em março (+32% MoM) puxado pelas campanhas de rádio. DM cresce 736% com entrada de novas réguas Banking. Push despenca 64% — menor volume desde janeiro.</p>
+    </div>
+    <div class="card" style="margin-top:20px;">
+      <div class="chart-container"><canvas id="chartCanais" height="320"></canvas></div>
+      <div class="mom-footer">
+        <div class="mom-item"><strong>MoM Mar vs Fev:</strong></div>
+        <div class="mom-item">InApp: <span class="g">+32,0%</span></div>
+        <div class="mom-item">DM: <span class="g">+736,5%</span></div>
+        <div class="mom-item">Email: <span class="rd">-29,8%</span></div>
+        <div class="mom-item">Push: <span class="rd">-63,9%</span></div>
+        <div class="mom-item">WhatsApp: <span class="rd">-88,1%</span></div>
+      </div>
+    </div>
+    <div class="insight-box insight-neutral" style="margin-top:16px;">
+      <strong>Diagnóstico — Mix de canais:</strong> A migração de volume pra InApp e DM reflete as campanhas de rádio, que usam InApp (102,6M) e DM (27,7M) como canais principais. A queda de Push (-64%) e Email (-30%) não indica falha operacional — decorre do fim de campanhas massivas de Payments (Débitos Veiculares e Rentabilização usavam Push/Email). O crescimento de DM (+736%) veio das réguas de rádio Banking (Open Finance, Rendimento, Cofrinhos).
+    </div>
+  </div>
+</section>
+
+<!-- ==================== S7: TAXA DE ENTREGA ==================== -->
+<section style="background:var(--bg-alt);">
+  <div class="container">
+    <div>
+      <div class="section-label"><span class="section-num">1.4</span> Taxa de Entrega</div>
+      <h2>Diagnóstico da Queda de Entrega</h2>
+      <p class="subtitle">A taxa caiu de 91,5% (fev) pra 88,9% (mar) — uma queda de 2,6 pp. A causa é efeito de mix: as campanhas de rádio concentraram volume em InApp, que tem a menor taxa de entrega entre os canais.</p>
+    </div>
+    <div class="grid-2" style="margin-top:20px;">
+      <div class="card">
+        <h3 style="margin-bottom:10px;">Taxa de Entrega por Canal</h3>
+        <table>
+          <thead><tr><th>Canal</th><th class="r">Fev/26</th><th class="r">Mar/26</th><th class="r">Var (pp)</th></tr></thead>
+          <tbody>
+            <tr><td>DM</td><td class="r g">100,0%</td><td class="r g">100,0%</td><td class="r">—</td></tr>
+            <tr><td>Email</td><td class="r">99,1%</td><td class="r">99,2%</td><td class="r g">+0,1</td></tr>
+            <tr><td>Push</td><td class="r">98,2%</td><td class="r">98,5%</td><td class="r g">+0,3</td></tr>
+            <tr><td>WhatsApp</td><td class="r">95,1%</td><td class="r">95,6%</td><td class="r g">+0,5</td></tr>
+            <tr style="background:rgba(220,38,38,0.05);"><td><strong>InApp</strong></td><td class="r">83,2%</td><td class="r rd">82,3%</td><td class="r rd"><strong>-0,9</strong></td></tr>
+          </tbody>
+          <tfoot><tr style="border-top:2px solid var(--border-light);"><td><strong>Total</strong></td><td class="r"><strong>91,5%</strong></td><td class="r rd"><strong>88,9%</strong></td><td class="r rd"><strong>-2,6</strong></td></tr></tfoot>
+        </table>
+        <div class="footnote" style="margin-top:8px;">Todos os canais melhoraram ou mantiveram a taxa individualmente, exceto InApp (-0,9 pp). A queda consolidada é efeito de mix, não de degradação.</div>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:10px;">Rádio vs Não-Rádio — Impacto na Entrega</h3>
+        <table>
+          <thead><tr><th>Grupo</th><th class="r">Disparos</th><th class="r">Não Entr.</th><th class="r">% Entrega</th></tr></thead>
+          <tbody>
+            <tr style="background:rgba(220,38,38,0.05);"><td><strong>Rádio</strong></td><td class="r">130,3M</td><td class="r rd">18,0M</td><td class="r rd"><strong>86,2%</strong></td></tr>
+            <tr style="background:rgba(22,163,74,0.05);"><td><strong>Não-Rádio</strong></td><td class="r">79,3M</td><td class="r">5,2M</td><td class="r g"><strong>93,4%</strong></td></tr>
+            <tr style="border-top:2px solid var(--border-light);"><td><strong>Total</strong></td><td class="r"><strong>209,6M</strong></td><td class="r"><strong>23,3M</strong></td><td class="r"><strong>88,9%</strong></td></tr>
+          </tbody>
+        </table>
+        <h3 style="margin-top:14px;margin-bottom:8px;">Não-Entregues por Campanha de Rádio (InApp)</h3>
+        <table>
+          <thead><tr><th>Campanha</th><th class="r">Disparos</th><th class="r">Não Entr.</th><th class="r">% Entr.</th></tr></thead>
+          <tbody>
+            <tr><td>Rendimento de Conta</td><td class="r">35,0M</td><td class="r rd">6,3M</td><td class="r">82,1%</td></tr>
+            <tr><td>Cofrinhos</td><td class="r">24,2M</td><td class="r rd">4,1M</td><td class="r">82,9%</td></tr>
+            <tr><td>Open Finance</td><td class="r">23,7M</td><td class="r rd">4,0M</td><td class="r">83,0%</td></tr>
+            <tr><td>Assist. Pagamento</td><td class="r">19,4M</td><td class="r rd">3,6M</td><td class="r">81,5%</td></tr>
+            <tr><td>Epic Rádio</td><td class="r">0,2M</td><td class="r">26K</td><td class="r">88,4%</td></tr>
+            <tr style="border-top:1px solid var(--border-light);"><td><strong>Total Rádio InApp</strong></td><td class="r"><strong>102,6M</strong></td><td class="r rd"><strong>18,0M</strong></td><td class="r"><strong>82,4%</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="insight-box insight-neg" style="margin-top:16px;">
+      <strong>Diagnóstico — A queda de entrega é 100% efeito de mix, não degradação de canal.</strong><br><br>
+      <strong>Fato:</strong> A taxa caiu 2,6 pp (91,5% → 88,9%), mas individualmente todos os canais melhoraram ou ficaram estáveis (Email +0,1 pp, Push +0,3 pp, DM 100%).<br><br>
+      <strong>Causa raiz:</strong> InApp saltou de 46% do mix total de disparos (fev) pra 61% (mar), puxado pelas campanhas de rádio. InApp tem taxa de ~82% — a mais baixa entre os canais. Com mais peso no mix, puxa a média consolidada pra baixo.<br><br>
+      <strong>Evidência:</strong> Sem rádio, a taxa de março seria <strong>93,4%</strong> — acima dos 91,5% de fevereiro. As campanhas de rádio sozinhas respondem por <strong>18,0M dos 23,3M não-entregues (77%)</strong>. Rendimento de Conta lidera com 6,3M não-entregues.<br><br>
+      <strong>Recomendação:</strong> Não há ação corretiva necessária no canal InApp — a taxa de ~82% é característica do canal (depende do usuário estar logado no app). Caso se queira melhorar a entrega consolidada, a alavanca é diversificar canais das campanhas de rádio (ex: mais DM, que tem 100% de entrega).
+    </div>
+  </div>
+</section>
+
+<!-- ==================== S3: CAMPANHAS RÉGUA vs ADHOC ==================== -->
+<section>
+  <div class="container">
+    <div>
+      <div class="section-label"><span class="section-num">1.5</span> Campanhas</div>
+      <h2>Réguas vs Ações Pontuais — 6 Meses</h2>
+      <p class="subtitle">Março atinge 77 campanhas ativas: 44 ações pontuais e 33 réguas. Crescimento liderado pelas réguas (+17,9%), impulsionado pelas novas réguas de rádio de Banking.</p>
+    </div>
+    <div class="card" style="margin-top:20px;">
+      <div class="chart-container"><canvas id="chartCampanhas" height="280"></canvas></div>
+      <div class="mom-footer">
+        <div class="mom-item"><strong>MoM Mar vs Fev:</strong></div>
+        <div class="mom-item">Ações Pontuais: <span class="rd">-2,2%</span> (45 → 44)</div>
+        <div class="mom-item">Réguas: <span class="g">+17,9%</span> (28 → 33)</div>
+        <div class="mom-item">Total: <span class="g">+5,5%</span> (73 → 77)</div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:16px;overflow-x:auto;">
+      <h3 style="margin-bottom:6px;">Março/26 — Campanhas por Tipo e Vertical</h3>
+      <table>
+        <thead><tr><th>Vertical</th><th class="r">Ação Pontual</th><th class="r">MoM</th><th class="r">Régua</th><th class="r">MoM</th><th class="r">Total</th></tr></thead>
+        <tbody>
+          <tr><td>Banking</td><td class="r">13</td><td class="r g">+44%</td><td class="r">11</td><td class="r rd">-8%</td><td class="r"><strong>24</strong></td></tr>
+          <tr><td>Payments</td><td class="r">20</td><td class="r rd">-26%</td><td class="r">13</td><td class="r g">+30%</td><td class="r"><strong>33</strong></td></tr>
+          <tr><td>Segmentos</td><td class="r">11</td><td class="r g">+22%</td><td class="r">9</td><td class="r g">+50%</td><td class="r"><strong>20</strong></td></tr>
+          <tr style="background:rgba(0,0,0,0.03);border-top:2px solid var(--border-light);"><td><strong>Total</strong></td><td class="r"><strong>44</strong></td><td class="r rd"><strong>-2%</strong></td><td class="r"><strong>33</strong></td><td class="r g"><strong>+18%</strong></td><td class="r"><strong>77</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="insight-box insight-pos" style="margin-top:16px;">
+      <strong>Diagnóstico — Maturidade operacional:</strong> O equilíbrio régua/adhoc (43%/57%) é saudável — o time mantém capacidade tática sem perder automação. Destaque pra Segmentos, que dobrou suas réguas de 6 pra 9 (+50%), indicando maior investimento em jornadas automatizadas. Payments concentra o maior número absoluto de campanhas (33), refletindo diversidade de produtos ativos. Banking reduziu 1 régua (-8%) mas entrou com as 5 campanhas de rádio que, pelo volume (112,2M), compensam com folga.
+    </div>
+  </div>
+</section>
+
+<!-- ==================== S8: USUÁRIOS MAU vs NÃO-MAU ==================== -->
+<section style="background:var(--bg-alt);">
+  <div class="container">
+    <div>
+      <div class="section-label"><span class="section-num">1.6</span> Usuários Abordados</div>
+      <h2>MAU App vs Não-MAU App</h2>
+      <p class="subtitle">72,8% dos usuários comunicados em março são MAU App — a maior proporção dos últimos 6 meses. A queda de -13,1% na base veio quase inteiramente dos Não-MAU (-34,8%).</p>
+    </div>
+    <div class="card" style="margin-top:20px;">
+      <div class="chart-container"><canvas id="chartMAU" height="300"></canvas></div>
+      <div class="mom-footer">
+        <div class="mom-item"><strong>MoM Mar vs Fev:</strong></div>
+        <div class="mom-item">MAU App: <span class="rd">-0,8%</span> (21,6M → 21,5M)</div>
+        <div class="mom-item">Não-MAU: <span class="rd">-34,8%</span> (12,3M → 8,0M)</div>
+        <div class="mom-item">Total: <span class="rd">-13,1%</span> (34,0M → 29,5M)</div>
+        <div class="mom-item">% MAU: <span class="g">+9,1 pp</span> (63,7% → 72,8%)</div>
+      </div>
+    </div>
+    <div class="insight-box insight-pos" style="margin-top:16px;">
+      <strong>Diagnóstico — Qualidade da base comunicada melhora:</strong> A queda de 4,5M veio dos Não-MAU (-4,3M). Isso é positivo: campanhas de rádio (predominantemente InApp) atingem apenas quem abre o app, filtrando naturalmente usuários inativos. A base MAU ficou estável (-0,8%), consolidada em ~21,5M. Os 8M de Não-MAU restantes provavelmente vêm de canais que não exigem presença no app (Email, Push externo). A maior proporção MAU (72,8%) tende a gerar melhor engajamento downstream.
+    </div>
+  </div>
+</section>
+
+<!-- ==================== S5: VERTICAIS ==================== -->
+<section>
+  <div class="container">
+    <div>
+      <div class="section-label"><span class="section-num">1.7</span> Série Histórica — Verticais</div>
+      <h2>Disparos por Vertical — 4 Meses</h2>
+      <p class="subtitle">Dois recortes: vertical padrão (esquerda) e rádio separado como categoria (direita). Sem rádio, Banking orgânico dobrou mas Payments caiu 71%.</p>
+    </div>
+    <div class="grid-2" style="margin-top:20px;">
+      <div class="card">
+        <h3 style="margin-bottom:12px;">Verticais (Visão Total)</h3>
+        <div class="chart-container"><canvas id="chartVertical1" height="300"></canvas></div>
+        <div class="mom-footer" style="font-size:10px;">
+          <div class="mom-item"><strong>MoM:</strong></div>
+          <div class="mom-item">Banking: <span class="g">+666,6%</span></div>
+          <div class="mom-item">Payments: <span class="rd">-66,2%</span></div>
+          <div class="mom-item">Segmentos: <span class="rd">-82,6%</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:12px;">Verticais + Rádio Separado</h3>
+        <div class="chart-container"><canvas id="chartVertical2" height="300"></canvas></div>
+        <div class="mom-footer" style="font-size:10px;">
+          <div class="mom-item"><strong>MoM:</strong></div>
+          <div class="mom-item">Rádio: <span class="y">novo</span></div>
+          <div class="mom-item">Banking s/ rádio: <span class="g">+100,6%</span></div>
+          <div class="mom-item">Payments s/ rádio: <span class="rd">-71,3%</span></div>
+          <div class="mom-item">Segmentos s/ rádio: <span class="g">+6,3%</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="insight-box insight-neutral" style="margin-top:16px;">
+      <strong>Diagnóstico — Efeito rádio no mix:</strong> Com rádio, Banking parece ter crescido 667%; sem rádio, o crescimento orgânico foi de 101% — puxado por PicPay Mais (21,7M) e Cashin (9,2M). A queda de Payments (-71,3% sem rádio) é real: Débitos Veiculares caiu 79% (fim do IPVA) e Rentabilização caiu 61% (fim das campanhas de cashback de fevereiro). Segmentos cresceu 6,3% sem rádio — estável, com volume baixo (2,7M).
+    </div>
+  </div>
+</section>
+
+<!-- ==================== S6: VERTICAL x PRODUTO MACRO ==================== -->
+<section style="background:var(--bg-alt);">
+  <div class="container">
+    <div>
+      <div class="section-label"><span class="section-num">1.8</span> Vertical x Produto Macro</div>
+      <h2>Disparos por Vertical e Produto — 3 Meses</h2>
+      <p class="subtitle">Visão total e visão sem rádio. Sem rádio, o volume de março cai de 186,3M pra 74,1M — revelando a dimensão real da operação orgânica.</p>
+    </div>
+    <div class="card" style="margin-top:20px;overflow-x:auto;">
+      <h3 style="margin-bottom:10px;">Visão Total (com Rádio)</h3>
+      <table>
+        <thead><tr><th>Vertical</th><th>Produto Macro</th><th class="r">Jan/26</th><th class="r">Fev/26</th><th class="r">Mar/26</th><th class="r">MoM %</th></tr></thead>
+        <tbody>
+          <tr style="background:rgba(22,163,74,0.05);"><td colspan="2"><strong>SFPF Banking</strong></td><td class="r"><strong>48,9M</strong></td><td class="r"><strong>17,0M</strong></td><td class="r"><strong>130,3M</strong></td><td class="r g"><strong>+666,6%</strong></td></tr>
+          <tr><td></td><td>Open Finance/CDC</td><td class="r">16,9M</td><td class="r">6,4M</td><td class="r">38,6M</td><td class="r g">+500,5%</td></tr>
+          <tr><td></td><td>Outros *</td><td class="r">0,2M</td><td class="r">0,2M</td><td class="r">34,8M</td><td class="r g">+15.600%</td></tr>
+          <tr><td></td><td>Cashin</td><td class="r">26,8M</td><td class="r">9,5M</td><td class="r">34,5M</td><td class="r g">+263,1%</td></tr>
+          <tr><td></td><td>PicPay Mais</td><td class="r">4,6M</td><td class="r">0,5M</td><td class="r">21,7M</td><td class="r g">+4.678%</td></tr>
+          <tr><td></td><td>Portabilidade</td><td class="r">0,1M</td><td class="r">0,2M</td><td class="r">0,7M</td><td class="r g">+175,0%</td></tr>
+          <tr style="background:rgba(37,99,235,0.05);"><td colspan="2"><strong>SFPF Payments</strong></td><td class="r"><strong>58,9M</strong></td><td class="r"><strong>157,1M</strong></td><td class="r"><strong>53,1M</strong></td><td class="r rd"><strong>-66,2%</strong></td></tr>
+          <tr><td></td><td>Rentabilização</td><td class="r">20,9M</td><td class="r">64,1M</td><td class="r">25,0M</td><td class="r rd">-61,0%</td></tr>
+          <tr><td></td><td>Débitos Veiculares</td><td class="r">34,9M</td><td class="r">41,3M</td><td class="r">8,8M</td><td class="r rd">-78,7%</td></tr>
+          <tr><td></td><td>Assist. Pagamento</td><td class="r">0,4M</td><td class="r">0,4M</td><td class="r">16,1M</td><td class="r g">+3.940%</td></tr>
+          <tr><td></td><td>Payments e Bills</td><td class="r">2,7M</td><td class="r">4,2M</td><td class="r">3,1M</td><td class="r rd">-26,2%</td></tr>
+          <tr><td></td><td>Cadastro de Cartão</td><td class="r">—</td><td class="r">3,2M</td><td class="r">0,1M</td><td class="r rd">-96,7%</td></tr>
+          <tr style="background:rgba(124,58,237,0.05);"><td colspan="2"><strong>SFPF Segmentos</strong></td><td class="r"><strong>3,6M</strong></td><td class="r"><strong>16,7M</strong></td><td class="r"><strong>2,9M</strong></td><td class="r rd"><strong>-82,6%</strong></td></tr>
+          <tr><td></td><td>Epic</td><td class="r">1,3M</td><td class="r">1,3M</td><td class="r">2,0M</td><td class="r g">+53,9%</td></tr>
+          <tr><td></td><td>PicPay Mais</td><td class="r">2,1M</td><td class="r">0,1M</td><td class="r">0,1M</td><td class="r g">+58,8%</td></tr>
+          <tr><td></td><td>Outros **</td><td class="r">—</td><td class="r">0,9M</td><td class="r">0,4M</td><td class="r rd">-52,8%</td></tr>
+          <tr><td></td><td>Payments e Bills</td><td class="r">0,2M</td><td class="r">0,2M</td><td class="r">0,1M</td><td class="r rd">-27,8%</td></tr>
+        </tbody>
+        <tfoot><tr style="background:rgba(0,0,0,0.03);border-top:2px solid var(--border-light);"><td colspan="2"><strong>Total</strong></td><td class="r"><strong>112,4M</strong></td><td class="r"><strong>190,8M</strong></td><td class="r"><strong>186,3M</strong></td><td class="r rd"><strong>-2,3%</strong></td></tr></tfoot>
+      </table>
+      <div class="footnote">* <strong>Outros (Banking):</strong> "Outro" (34,5M — rádio Rendimento de Conta), "Saque" (113K) e "Conta Global" (107K). ** <strong>Outros (Segmentos):</strong> "Outro" (445K).</div>
+    </div>
+    <div class="card" style="margin-top:20px;overflow-x:auto;">
+      <h3 style="margin-bottom:10px;">Visão Orgânica (sem Rádio)</h3>
+      <table>
+        <thead><tr><th>Vertical</th><th>Produto Macro</th><th class="r">Jan/26</th><th class="r">Fev/26</th><th class="r">Mar/26</th><th class="r">MoM %</th></tr></thead>
+        <tbody>
+          <tr style="background:rgba(22,163,74,0.05);"><td colspan="2"><strong>SFPF Banking</strong></td><td class="r"><strong>48,9M</strong></td><td class="r"><strong>17,0M</strong></td><td class="r"><strong>34,1M</strong></td><td class="r g"><strong>+100,6%</strong></td></tr>
+          <tr><td></td><td>PicPay Mais</td><td class="r">4,6M</td><td class="r">0,5M</td><td class="r">21,7M</td><td class="r g">+4.678%</td></tr>
+          <tr><td></td><td>Cashin</td><td class="r">26,8M</td><td class="r">9,5M</td><td class="r">9,2M</td><td class="r rd">-3,0%</td></tr>
+          <tr><td></td><td>Open Finance/CDC</td><td class="r">16,9M</td><td class="r">6,4M</td><td class="r">2,3M</td><td class="r rd">-64,9%</td></tr>
+          <tr><td></td><td>Portabilidade</td><td class="r">0,1M</td><td class="r">0,2M</td><td class="r">0,7M</td><td class="r g">+175,0%</td></tr>
+          <tr><td></td><td>Outros</td><td class="r">0,2M</td><td class="r">0,2M</td><td class="r">0,2M</td><td class="r">-0,8%</td></tr>
+          <tr style="background:rgba(37,99,235,0.05);"><td colspan="2"><strong>SFPF Payments</strong></td><td class="r"><strong>58,9M</strong></td><td class="r"><strong>130,1M</strong></td><td class="r"><strong>37,3M</strong></td><td class="r rd"><strong>-71,3%</strong></td></tr>
+          <tr><td></td><td>Rentabilização</td><td class="r">20,9M</td><td class="r">64,1M</td><td class="r">25,0M</td><td class="r rd">-61,0%</td></tr>
+          <tr><td></td><td>Débitos Veiculares</td><td class="r">34,9M</td><td class="r">41,3M</td><td class="r">8,8M</td><td class="r rd">-78,7%</td></tr>
+          <tr><td></td><td>Payments e Bills</td><td class="r">2,7M</td><td class="r">4,2M</td><td class="r">3,1M</td><td class="r rd">-26,2%</td></tr>
+          <tr><td></td><td>Assist. Pagamento</td><td class="r">0,4M</td><td class="r">0,4M</td><td class="r">0,3M</td><td class="r rd">-14,8%</td></tr>
+          <tr><td></td><td>Cadastro de Cartão</td><td class="r">—</td><td class="r">3,2M</td><td class="r">0,1M</td><td class="r rd">-96,7%</td></tr>
+          <tr style="background:rgba(124,58,237,0.05);"><td colspan="2"><strong>SFPF Segmentos</strong></td><td class="r"><strong>3,6M</strong></td><td class="r"><strong>2,5M</strong></td><td class="r"><strong>2,7M</strong></td><td class="r g"><strong>+6,3%</strong></td></tr>
+          <tr><td></td><td>Epic</td><td class="r">1,3M</td><td class="r">1,3M</td><td class="r">2,0M</td><td class="r g">+53,9%</td></tr>
+          <tr><td></td><td>Outros</td><td class="r">—</td><td class="r">0,9M</td><td class="r">0,4M</td><td class="r rd">-52,8%</td></tr>
+          <tr><td></td><td>Payments e Bills</td><td class="r">0,2M</td><td class="r">0,2M</td><td class="r">0,1M</td><td class="r rd">-27,8%</td></tr>
+          <tr><td></td><td>PicPay Mais</td><td class="r">2,1M</td><td class="r">0,1M</td><td class="r">0,1M</td><td class="r g">+58,8%</td></tr>
+        </tbody>
+        <tfoot><tr style="background:rgba(0,0,0,0.03);border-top:2px solid var(--border-light);"><td colspan="2"><strong>Total sem Rádio</strong></td><td class="r"><strong>112,4M</strong></td><td class="r"><strong>149,6M</strong></td><td class="r"><strong>74,1M</strong></td><td class="r rd"><strong>-50,5%</strong></td></tr></tfoot>
+      </table>
+      <div class="footnote">Jan e Fev não tiveram campanhas de rádio — valores idênticos à visão total. Delta março: 186,3M (total) vs 74,1M (sem rádio) = 112,2M atribuídos a rádio.</div>
+    </div>
+    <div class="insight-box insight-neg" style="margin-top:16px;">
+      <strong>Diagnóstico — Payments perde 71% sem rádio:</strong> Concentrada em 3 produtos: (1) <strong>Débitos Veiculares</strong> -79% (fim IPVA); (2) <strong>Rentabilização</strong> -61% (pós-campanhas massivas de cashback em fev); (3) <strong>Cadastro de Cartão</strong> -97%. Assist. Pagamento compensou apenas via rádio (15,8M).<br><br>
+      <strong>Banking orgânico dobra:</strong> PicPay Mais saltou de 0,5M pra 21,7M — merece investigação: é reclassificação de vertical ou campanha genuinamente nova?
+    </div>
+  </div>
+</section>
+
+<!-- ==================== S9: MIX VERTICAIS E PRODUTOS ==================== -->
+<section>
+  <div class="container">
+    <div>
+      <div class="section-label"><span class="section-num">1.9</span> Mix de Verticais e Produtos</div>
+      <h2>Combinações por Usuário MAU — Março/26</h2>
+      <p class="subtitle">Apenas usuários MAU App (21,5M impactados de 27,3M MAU = 78,7%). 70,8% dos MAU impactados receberam Banking + Payments. Rádio empurrou Open Finance + Cashin como combos dominantes.</p>
+    </div>
+    <!-- Mix Verticais: donut + tabela lado a lado -->
+    <div class="grid-2" style="margin-top:20px;">
+      <div class="card">
+        <h3 style="margin-bottom:12px;">Mix de Verticais por Usuário MAU</h3>
+        <div class="chart-container"><canvas id="chartMixVertical" height="240"></canvas></div>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:12px;">Distribuição (base: 21,5M MAU impactados)</h3>
+        <table>
+          <thead><tr><th>Combinação</th><th class="r">Usuários</th><th class="r">%</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Banking + Payments</strong></td><td class="r">15,2M</td><td class="r"><strong>70,8%</strong></td></tr>
+            <tr><td>Banking (só)</td><td class="r">4,6M</td><td class="r">21,3%</td></tr>
+            <tr><td>Payments (só)</td><td class="r">1,1M</td><td class="r">5,1%</td></tr>
+            <tr><td>Banking + Pay. + Seg.</td><td class="r">0,4M</td><td class="r">1,7%</td></tr>
+            <tr><td>Banking + Segmentos</td><td class="r">0,1M</td><td class="r">0,7%</td></tr>
+            <tr><td>Segmentos (só)</td><td class="r">0,1M</td><td class="r">0,4%</td></tr>
+            <tr><td>Payments + Segmentos</td><td class="r">0,02M</td><td class="r">0,1%</td></tr>
+          </tbody>
+        </table>
+        <div class="footnote">Filtro: apenas consumers com acesso logado ao app em Mar/26. 21,3% dos MAU não receberam nenhum disparo.</div>
+      </div>
+    </div>
+    <!-- Mix Produto Macro: Fev vs Mar (MAU) -->
+    <div class="grid-2" style="margin-top:16px;">
+      <div class="card">
+        <h3 style="margin-bottom:10px;">Top 10 — Mix Produto Macro MAU — <span style="color:var(--text-muted);">Fev/26</span></h3>
+        <table>
+          <thead><tr><th>#</th><th>Combinação (product_category)</th><th class="r">Usuários</th><th class="r">%</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Assist. Pag. + Outros + Pay&Bills + Rentab. + Underage</td><td class="r">1,2M</td><td class="r"><strong>5,7%</strong></td></tr>
+            <tr><td>2</td><td>Assist. Pag. + Outros + Pay&Bills + Underage</td><td class="r">1,2M</td><td class="r">5,4%</td></tr>
+            <tr><td>3</td><td>Rentabilização</td><td class="r">1,1M</td><td class="r">5,0%</td></tr>
+            <tr><td>4</td><td>Outros</td><td class="r">0,8M</td><td class="r">3,5%</td></tr>
+            <tr><td>5</td><td>Débitos Veiculares</td><td class="r">0,6M</td><td class="r">2,9%</td></tr>
+            <tr><td>6</td><td>Assist. Pag. + Cashin + Outros + Pay&Bills + Rentab. + Underage</td><td class="r">0,6M</td><td class="r">2,6%</td></tr>
+            <tr><td>7</td><td>Assist. Pag. + Déb. Veic. + Outros + Pay&Bills + Rentab. + Underage</td><td class="r">0,6M</td><td class="r">2,6%</td></tr>
+            <tr><td>8</td><td>Assist. Pag. + Déb. Veic. + Outros + Pay&Bills + Underage</td><td class="r">0,5M</td><td class="r">2,5%</td></tr>
+            <tr><td>9</td><td>Outros + Pay&Bills + Underage</td><td class="r">0,5M</td><td class="r">2,4%</td></tr>
+            <tr><td>10</td><td>Assist. Pag. + Cashin + Outros + Pay&Bills + Underage</td><td class="r">0,5M</td><td class="r">2,3%</td></tr>
+          </tbody>
+          <tfoot><tr style="border-top:2px solid var(--border-light);"><td></td><td><strong>Top 10 concentram</strong></td><td></td><td class="r"><strong>34,9%</strong></td></tr></tfoot>
+        </table>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:10px;">Top 10 — Mix Produto Macro MAU — <span style="color:var(--green);">Mar/26</span></h3>
+        <table>
+          <thead><tr><th>#</th><th>Combinação (product_category)</th><th class="r">Usuários</th><th class="r">%</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Assist. Pag. + Cashin + Open Finance + Outros</td><td class="r">2,2M</td><td class="r"><strong>10,3%</strong></td></tr>
+            <tr><td>2</td><td>Assist. Pag. + Cashin + Open Finance + Outros + Rentab.</td><td class="r">1,7M</td><td class="r">7,9%</td></tr>
+            <tr><td>3</td><td>Assist. Pag. + Cashin + Open Finance</td><td class="r">1,5M</td><td class="r">6,9%</td></tr>
+            <tr><td>4</td><td>Cashin + Open Finance + Outros</td><td class="r">1,3M</td><td class="r">5,9%</td></tr>
+            <tr><td>5</td><td>Assist. Pag. + Cashin + Open Finance + Rentab.</td><td class="r">1,1M</td><td class="r">5,0%</td></tr>
+            <tr><td>6</td><td>Cashin + Open Finance + Outros + Rentab.</td><td class="r">0,9M</td><td class="r">4,0%</td></tr>
+            <tr><td>7</td><td>Assist. Pag. + Cashin + Open Finance + Outros + PP Mais</td><td class="r">0,8M</td><td class="r">3,9%</td></tr>
+            <tr><td>8</td><td>Cashin + Open Finance + Outros + PP Mais</td><td class="r">0,6M</td><td class="r">3,0%</td></tr>
+            <tr><td>9</td><td>Rentabilização</td><td class="r">0,6M</td><td class="r">2,8%</td></tr>
+            <tr><td>10</td><td>Cashin + Open Finance</td><td class="r">0,5M</td><td class="r">2,5%</td></tr>
+          </tbody>
+          <tfoot><tr style="border-top:2px solid var(--border-light);"><td></td><td><strong>Top 10 concentram</strong></td><td></td><td class="r"><strong>52,3%</strong></td></tr></tfoot>
+        </table>
+      </div>
+    </div>
+    <div class="insight-box insight-warn" style="margin-top:16px;">
+      <strong>Diagnóstico — Mix de Produtos para Usuários MAU:</strong><br><br>
+      <strong>Concentração sobe de 34,9% → 52,3%:</strong> Top 10 combos de março cobrem mais da metade dos MAU impactados vs. apenas 1/3 em fevereiro. Rádio Banking (Open Finance + Cashin) criou combos massivos e homogêneos — 8 dos 10 top combos contêm Open Finance e/ou Cashin.<br><br>
+      <strong>Banking + Payments domina MAU (70,8%):</strong> Quando filtramos apenas MAU, a sobreposição é ainda maior que na base total (58,7% antes). Usuários ativos no app recebem comunicações de ambas as verticais — esperado, pois campanhas trigger/régua atingem quem está usando o app.<br><br>
+      <strong>Payments solo cai de 18,8% → 5,1% em MAU:</strong> A maioria dos "Payments only" da base total são usuários inativos no app que recebem email/push. Entre os MAU, quase todos já recebem Banking também.<br><br>
+      <strong>Oportunidade redimensionada:</strong> Apenas 1,1M MAU (5,1%) recebem só Payments — pool de cross-sell Banking menor mas mais qualificado (usuários ativos). Os 4,6M Banking-only (21,3%) são candidatos pra Payments — maioria recebeu rádio Banking sem trigger transacional.
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== SESSÃO 2: HEADER ==================== -->
+<section style="background:linear-gradient(135deg,#E2E8F0 0%,#CBD5E1 40%,#94A3B8 100%);">
+  <div class="container">
+    <div>
+      <div class="section-label" style="color:var(--blue);"><span class="section-num" style="background:var(--blue);">2</span> Engajamento</div>
+      <h1 style="font-size:clamp(24px,4vw,40px);">Sessão 2 — Engajamento</h1>
+      <p class="subtitle">OR, CTR e CTOR por canal com regras de normalização. Destaques positivos e negativos por campanha.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== S2.1: DENOMINADORES ==================== -->
+<section style="background:var(--bg-alt);">
+  <div class="container">
+    <div>
+      <div class="section-label" style="color:var(--blue);"><span class="section-num" style="background:var(--blue);">2.1</span> Denominadores de Engajamento</div>
+      <h2>Base de Cálculo por Canal — 3 Meses</h2>
+      <p class="subtitle">Denominadores usados no cálculo de OR, CTR e CTOR. Cada canal possui regras de elegibilidade — SMS e Banner excluídos.</p>
+    </div>
+    <!-- Envios Sucesso -->
+    <div class="card" style="margin-top:20px;overflow-x:auto;">
+      <h3 style="margin-bottom:10px;">Envios com Sucesso (denominador)</h3>
+      <table>
+        <thead><tr><th>Canal</th><th class="r">Jan/26</th><th class="r">Fev/26</th><th class="r">Mar/26</th><th class="r">MoM %</th><th class="r">Elegível p/</th></tr></thead>
+        <tbody>
+          <tr><td>Email</td><td class="r">34,0M</td><td class="r">31,7M</td><td class="r">22,2M</td><td class="r rd">-29,8%</td><td class="r">OR, CTR, CTOR</td></tr>
+          <tr><td>DM</td><td class="r">5,2M</td><td class="r">3,8M</td><td class="r">31,8M</td><td class="r g">+736,5%</td><td class="r">OR, CTR, CTOR</td></tr>
+          <tr><td>Push</td><td class="r">51,0M</td><td class="r">75,0M</td><td class="r">27,1M</td><td class="r rd">-63,9%</td><td class="r">CTR (abertura=clique)</td></tr>
+          <tr><td>InApp</td><td class="r">22,1M</td><td class="r">79,7M</td><td class="r">105,2M</td><td class="r g">+32,0%</td><td class="r">OR*, CTR, CTOR</td></tr>
+          <tr><td>WhatsApp</td><td class="r">122,8K</td><td class="r">566,6K</td><td class="r">67,5K</td><td class="r rd">-88,1%</td><td class="r">— (OR=delivery)</td></tr>
+          <tr style="background:rgba(0,0,0,0.03);"><td><strong>Total</strong></td><td class="r"><strong>112,4M</strong></td><td class="r"><strong>190,8M</strong></td><td class="r"><strong>186,3M</strong></td><td class="r rd"><strong>-2,3%</strong></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Aberturas -->
+    <div class="card" style="margin-top:12px;overflow-x:auto;">
+      <h3 style="margin-bottom:10px;">Aberturas (numerador OR)</h3>
+      <table>
+        <thead><tr><th>Canal</th><th class="r">Jan/26</th><th class="r">Fev/26</th><th class="r">Mar/26</th><th class="r">MoM %</th><th>Regra</th></tr></thead>
+        <tbody>
+          <tr><td>Email</td><td class="r">3,0M</td><td class="r">2,8M</td><td class="r">1,8M</td><td class="r rd">-35,9%</td><td>Abertura intencional</td></tr>
+          <tr><td>DM</td><td class="r">291,9K</td><td class="r">371,8K</td><td class="r">2,9M</td><td class="r g">+672,6%</td><td>Abertura intencional</td></tr>
+          <tr><td>Push</td><td class="r" colspan="3" style="color:var(--text-dim);text-align:center;">N/A — abertura = clique (tratado no CTR)</td><td class="r">—</td><td style="color:var(--text-dim);">Excluído do OR</td></tr>
+          <tr style="background:rgba(124,58,237,0.04);"><td>InApp *</td><td class="r">7,7M</td><td class="r">14,3M</td><td class="r">18,5M</td><td class="r g">+29,2%</td><td>Abertura passiva (exibição)</td></tr>
+          <tr style="background:rgba(0,0,0,0.03);"><td><strong>Total OR elegível (E+DM)</strong></td><td class="r"><strong>3,3M</strong></td><td class="r"><strong>3,2M</strong></td><td class="r"><strong>4,7M</strong></td><td class="r g"><strong>+47,3%</strong></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Cliques -->
+    <div class="card" style="margin-top:12px;overflow-x:auto;">
+      <h3 style="margin-bottom:10px;">Cliques (numerador CTR)</h3>
+      <table>
+        <thead><tr><th>Canal</th><th class="r">Jan/26</th><th class="r">Fev/26</th><th class="r">Mar/26</th><th class="r">MoM %</th><th>Regra</th></tr></thead>
+        <tbody>
+          <tr><td>Email</td><td class="r">16,7K</td><td class="r">17,5K</td><td class="r">9,1K</td><td class="r rd">-47,7%</td><td>Clique intencional</td></tr>
+          <tr><td>DM</td><td class="r">43,1K</td><td class="r">43,6K</td><td class="r">379,1K</td><td class="r g">+769,5%</td><td>Clique intencional</td></tr>
+          <tr><td>Push</td><td class="r">563,1K</td><td class="r">755,7K</td><td class="r">350,9K</td><td class="r rd">-53,6%</td><td>Abertura = clique</td></tr>
+          <tr><td>InApp</td><td class="r">176,4K</td><td class="r">309,6K</td><td class="r">542,4K</td><td class="r g">+75,2%</td><td>Clique intencional</td></tr>
+          <tr style="background:rgba(0,0,0,0.03);"><td><strong>Total CTR elegível</strong></td><td class="r"><strong>799,3K</strong></td><td class="r"><strong>1,1M</strong></td><td class="r"><strong>1,3M</strong></td><td class="r g"><strong>+14,3%</strong></td><td></td></tr>
+        </tbody>
+      </table>
+      <div class="footnote">* InApp OR é passivo (exibição automática) — não comparável com OR de Email/DM. SMS e Banner excluídos de todos os cálculos (sem tracking).</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== S2.2: KPIs ==================== -->
+<section>
+  <div class="container">
+    <div>
+      <div class="section-label" style="color:var(--blue);"><span class="section-num" style="background:var(--blue);">2.2</span> KPIs de Engajamento</div>
+      <h2>OR, CTR e CTOR por Canal — 3 Meses</h2>
+      <p class="subtitle">Taxas normalizadas. Consolidado BU calculado apenas com canais elegíveis pra cada métrica.</p>
+    </div>
+    <div class="grid-3" style="margin-top:20px;">
+      <div class="card">
+        <h3 style="margin-bottom:10px;">% Open Rate</h3>
+        <table style="font-size:11px;">
+          <thead><tr><th>Canal</th><th class="r">Jan</th><th class="r">Fev</th><th class="r">Mar</th><th class="r">MoM</th></tr></thead>
+          <tbody>
+            <tr><td>Email</td><td class="r">8,82%</td><td class="r">8,80%</td><td class="r">8,03%</td><td class="r rd">-0,8</td></tr>
+            <tr><td>DM</td><td class="r">5,63%</td><td class="r">9,80%</td><td class="r">9,05%</td><td class="r rd">-0,8</td></tr>
+            <tr><td>InApp *</td><td class="r">34,97%</td><td class="r">17,97%</td><td class="r">17,59%</td><td class="r rd">-0,4</td></tr>
+            <tr style="background:rgba(0,0,0,0.03);"><td><strong>BU (E+DM)</strong></td><td class="r"><strong>8,39%</strong></td><td class="r"><strong>8,89%</strong></td><td class="r"><strong>8,62%</strong></td><td class="r rd"><strong>-0,3</strong></td></tr>
+          </tbody>
+        </table>
+        <div class="footnote" style="font-size:9px;">* InApp OR passivo, fora do consolidado.</div>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:10px;">% Click-Through Rate</h3>
+        <table style="font-size:11px;">
+          <thead><tr><th>Canal</th><th class="r">Jan</th><th class="r">Fev</th><th class="r">Mar</th><th class="r">MoM</th></tr></thead>
+          <tbody>
+            <tr><td>Email</td><td class="r">0,049%</td><td class="r">0,055%</td><td class="r">0,041%</td><td class="r rd">-0,01</td></tr>
+            <tr><td>DM</td><td class="r">0,831%</td><td class="r">1,148%</td><td class="r">1,194%</td><td class="r g">+0,05</td></tr>
+            <tr><td>Push</td><td class="r">1,104%</td><td class="r">1,008%</td><td class="r">1,297%</td><td class="r g">+0,29</td></tr>
+            <tr><td>InApp</td><td class="r">0,798%</td><td class="r">0,388%</td><td class="r">0,516%</td><td class="r g">+0,13</td></tr>
+            <tr style="background:rgba(0,0,0,0.03);"><td><strong>BU</strong></td><td class="r"><strong>0,714%</strong></td><td class="r"><strong>0,562%</strong></td><td class="r"><strong>0,687%</strong></td><td class="r g"><strong>+0,13</strong></td></tr>
+          </tbody>
+        </table>
+        <div class="footnote" style="font-size:9px;">Inclui E+DM+Push+InApp. Exclui WA/SMS/Banner.</div>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:10px;">% Click-to-Open Rate</h3>
+        <table style="font-size:11px;">
+          <thead><tr><th>Canal</th><th class="r">Jan</th><th class="r">Fev</th><th class="r">Mar</th><th class="r">MoM</th></tr></thead>
+          <tbody>
+            <tr><td>Email</td><td class="r">0,56%</td><td class="r">0,63%</td><td class="r">0,51%</td><td class="r rd">-0,1</td></tr>
+            <tr><td>DM</td><td class="r">14,77%</td><td class="r">11,72%</td><td class="r">13,19%</td><td class="r g">+1,5</td></tr>
+            <tr><td>InApp</td><td class="r">2,28%</td><td class="r">2,16%</td><td class="r">2,93%</td><td class="r g">+0,8</td></tr>
+            <tr style="background:rgba(0,0,0,0.03);"><td><strong>BU (E+DM)</strong></td><td class="r"><strong>1,82%</strong></td><td class="r"><strong>1,94%</strong></td><td class="r"><strong>8,32%</strong></td><td class="r g"><strong>+6,4</strong></td></tr>
+          </tbody>
+        </table>
+        <div class="footnote" style="font-size:9px;">Consolidado E+DM. InApp separado. Push sem OR real.</div>
+      </div>
+    </div>
+    <div class="insight-box insight-neutral" style="margin-top:16px;">
+      <strong>Diagnóstico — Engajamento de março:</strong><br><br>
+      <strong>OR estável com leve queda:</strong> Consolidado Email+DM caiu 0,27 pp (8,89% → 8,62%). Email perde 0,77 pp por diluição — campanhas mais massivas. DM cai 0,75 pp após boom de volume (+736%), esperado: mais volume = base mais fria = OR menor.<br><br>
+      <strong>CTR melhora em 3 de 4 canais:</strong> Consolidado sobe de 0,56% pra 0,69%. Push lidera com +0,29 pp (1,30%), notificações de março tiveram CTA mais relevante. DM mantém crescimento (+0,05 pp). Apenas Email cai.<br><br>
+      <strong>CTOR consolidado salta (efeito de mix):</strong> De 1,94% pra 8,32% porque DM passou de 10,7% do denominador (fev) pra 58,9% (mar), e DM tem CTOR ~13% vs ~0,5% do Email. Não é melhoria de conteúdo — é mudança de composição do canal.<br><br>
+      <strong>InApp CTOR melhora genuinamente:</strong> De 2,16% pra 2,93% (+0,77 pp) com volume triplicando — campanhas de rádio tiveram conteúdo relevante pra quem visualizou.
+    </div>
+  </div>
+</section>
+
+<!-- ==================== S2.2b: KPIs por VERTICAL ==================== -->
+<section style="background:var(--bg-alt);">
+  <div class="container">
+    <div>
+      <div class="section-label" style="color:var(--blue);"><span class="section-num" style="background:var(--blue);">2.2b</span> KPIs por Vertical</div>
+      <h2>OR, CTR e CTOR por Canal — Breakdown por Vertical</h2>
+      <p class="subtitle">Mesmas métricas da seção 2.2, agora segmentadas por vertical (Payments, Banking, Segmentos). Permite identificar quais verticais puxam ou arrastam a média da BU em cada canal.</p>
+    </div>
+
+    <!-- PAYMENTS -->
+    <div class="card" style="margin-top:20px;">
+      <h3 style="margin-bottom:4px;"><span class="tag tag-blue" style="font-size:10px;">Payments</span> OR, CTR e CTOR por Canal</h3>
+      <p style="font-size:11px;color:var(--text-dim);margin-bottom:12px;">Email + Push + InApp + DM (volume pequeno)</p>
+      <div class="grid-3">
+        <div>
+          <h3 style="font-size:12px;margin-bottom:6px;">% Open Rate</h3>
+          <table style="font-size:11px;">
+            <thead><tr><th>Canal</th><th class="r">Jan</th><th class="r">Fev</th><th class="r">Mar</th><th class="r">MoM</th></tr></thead>
+            <tbody>
+              <tr><td>Email</td><td class="r">9,46%</td><td class="r">8,54%</td><td class="r">7,18%</td><td class="r rd">-1,36</td></tr>
+              <tr><td>DM</td><td class="r">8,55%</td><td class="r">10,56%</td><td class="r">7,68%</td><td class="r rd">-2,88</td></tr>
+              <tr><td>InApp*</td><td class="r">32,36%</td><td class="r">20,41%</td><td class="r">20,51%</td><td class="r g">+0,10</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h3 style="font-size:12px;margin-bottom:6px;">% CTR</h3>
+          <table style="font-size:11px;">
+            <thead><tr><th>Canal</th><th class="r">Jan</th><th class="r">Fev</th><th class="r">Mar</th><th class="r">MoM</th></tr></thead>
+            <tbody>
+              <tr><td>Email</td><td class="r">0,065%</td><td class="r">0,053%</td><td class="r">0,048%</td><td class="r rd">-0,005</td></tr>
+              <tr><td>DM</td><td class="r">0,808%</td><td class="r">1,033%</td><td class="r">0,826%</td><td class="r rd">-0,207</td></tr>
+              <tr><td>Push</td><td class="r">1,08%</td><td class="r">0,92%</td><td class="r">1,14%</td><td class="r g">+0,22</td></tr>
+              <tr><td>InApp</td><td class="r">0,625%</td><td class="r">0,426%</td><td class="r">0,674%</td><td class="r g">+0,248</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h3 style="font-size:12px;margin-bottom:6px;">% CTOR</h3>
+          <table style="font-size:11px;">
+            <thead><tr><th>Canal</th><th class="r">Jan</th><th class="r">Fev</th><th class="r">Mar</th><th class="r">MoM</th></tr></thead>
+            <tbody>
+              <tr><td>Email</td><td class="r">0,69%</td><td class="r">0,62%</td><td class="r">0,67%</td><td class="r g">+0,05</td></tr>
+              <tr><td>DM</td><td class="r">9,45%</td><td class="r">9,78%</td><td class="r">10,75%</td><td class="r g">+0,97</td></tr>
+              <tr><td>InApp</td><td class="r">1,93%</td><td class="r">2,09%</td><td class="r">3,29%</td><td class="r g">+1,20</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="footnote">Email OR em queda constante (9,5% → 7,2% em 3 meses) — base cada vez mais diluída. InApp CTOR salta +1,2 pp com campanhas de taxa zero e IPVA, melhor tendência do trimestre. DM com volume muito baixo em Mar (352K) — caiu 87% vs fev, KPIs voláteis.</div>
+    </div>
+
+    <!-- BANKING -->
+    <div class="card" style="margin-top:16px;">
+      <h3 style="margin-bottom:4px;"><span class="tag tag-green" style="font-size:10px;">Banking</span> OR, CTR e CTOR por Canal</h3>
+      <p style="font-size:11px;color:var(--text-dim);margin-bottom:12px;">Rádio amplifica DM e InApp. Email estável. Push resiliente.</p>
+      <div class="grid-3">
+        <div>
+          <h3 style="font-size:12px;margin-bottom:6px;">% Open Rate</h3>
+          <table style="font-size:11px;">
+            <thead><tr><th>Canal</th><th class="r">Jan</th><th class="r">Fev</th><th class="r">Mar</th><th class="r">MoM</th></tr></thead>
+            <tbody>
+              <tr><td>Email</td><td class="r">7,89%</td><td class="r">8,09%</td><td class="r">8,06%</td><td class="r rd">-0,03</td></tr>
+              <tr><td>DM</td><td class="r">4,75%</td><td class="r">7,06%</td><td class="r">9,33%</td><td class="r g">+2,27</td></tr>
+              <tr><td>InApp*</td><td class="r">40,29%</td><td class="r">36,47%</td><td class="r">16,88%</td><td class="r rd">-19,59</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h3 style="font-size:12px;margin-bottom:6px;">% CTR</h3>
+          <table style="font-size:11px;">
+            <thead><tr><th>Canal</th><th class="r">Jan</th><th class="r">Fev</th><th class="r">Mar</th><th class="r">MoM</th></tr></thead>
+            <tbody>
+              <tr><td>Email</td><td class="r">0,022%</td><td class="r">0,035%</td><td class="r">0,018%</td><td class="r rd">-0,017</td></tr>
+              <tr><td>DM</td><td class="r">0,714%</td><td class="r">1,100%</td><td class="r">1,201%</td><td class="r g">+0,101</td></tr>
+              <tr><td>Push</td><td class="r">1,13%</td><td class="r">1,45%</td><td class="r">1,75%</td><td class="r g">+0,30</td></tr>
+              <tr><td>InApp</td><td class="r">1,116%</td><td class="r">1,055%</td><td class="r">0,468%</td><td class="r rd">-0,587</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h3 style="font-size:12px;margin-bottom:6px;">% CTOR</h3>
+          <table style="font-size:11px;">
+            <thead><tr><th>Canal</th><th class="r">Jan</th><th class="r">Fev</th><th class="r">Mar</th><th class="r">MoM</th></tr></thead>
+            <tbody>
+              <tr><td>Email</td><td class="r">0,28%</td><td class="r">0,43%</td><td class="r">0,22%</td><td class="r rd">-0,21</td></tr>
+              <tr><td>DM</td><td class="r">15,03%</td><td class="r">15,57%</td><td class="r">12,87%</td><td class="r rd">-2,70</td></tr>
+              <tr><td>InApp</td><td class="r">2,77%</td><td class="r">2,89%</td><td class="r">2,77%</td><td class="r rd">-0,12</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="footnote">InApp OR despenca -19,6 pp — efeito mix: rádio injetou 82,6M envios massivos (OR ~11-21%) diluindo a média vs. fev (2,9M com OR 36%). InApp CTOR estável em 2,77% apesar do volume 28x maior — sinal de que conteúdo rádio mantém qualidade. DM OR sobe +2,27 pp com volume 29x maior — rádio Banking em DM tem OR 9,3%, acima do Jan. Push é o destaque silencioso: CTR 1,75% (+0,30 pp), melhor dos 3 meses, com campanhas de portabilidade e Open Finance.</div>
+    </div>
+
+    <!-- SEGMENTOS -->
+    <div class="card" style="margin-top:16px;">
+      <h3 style="margin-bottom:4px;"><span class="tag tag-slate" style="font-size:10px;background:#94A3B8;color:#fff;">Segmentos</span> OR, CTR e CTOR por Canal</h3>
+      <p style="font-size:11px;color:var(--text-dim);margin-bottom:12px;">Volume menor, comportamento mais volátil. Epic domina Email.</p>
+      <div class="grid-3">
+        <div>
+          <h3 style="font-size:12px;margin-bottom:6px;">% Open Rate</h3>
+          <table style="font-size:11px;">
+            <thead><tr><th>Canal</th><th class="r">Jan</th><th class="r">Fev</th><th class="r">Mar</th><th class="r">MoM</th></tr></thead>
+            <tbody>
+              <tr><td>Email</td><td class="r">21,25%</td><td class="r">18,54%</td><td class="r">19,37%</td><td class="r g">+0,83</td></tr>
+              <tr><td>DM</td><td class="r">10,43%</td><td class="r">20,57%</td><td class="r">6,96%</td><td class="r rd">-13,61</td></tr>
+              <tr><td>InApp*</td><td class="r">27,21%</td><td class="r">3,96%</td><td class="r">23,34%</td><td class="r g">+19,38</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h3 style="font-size:12px;margin-bottom:6px;">% CTR</h3>
+          <table style="font-size:11px;">
+            <thead><tr><th>Canal</th><th class="r">Jan</th><th class="r">Fev</th><th class="r">Mar</th><th class="r">MoM</th></tr></thead>
+            <tbody>
+              <tr><td>Email</td><td class="r">0,435%</td><td class="r">0,163%</td><td class="r">0,114%</td><td class="r rd">-0,049</td></tr>
+              <tr><td>DM</td><td class="r">1,701%</td><td class="r">5,372%</td><td class="r">1,308%</td><td class="r rd">-4,064</td></tr>
+              <tr><td>Push</td><td class="r">1,14%</td><td class="r">2,17%</td><td class="r">2,21%</td><td class="r g">+0,04</td></tr>
+              <tr><td>InApp</td><td class="r">0,462%</td><td class="r">0,099%</td><td class="r">1,453%</td><td class="r g">+1,354</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h3 style="font-size:12px;margin-bottom:6px;">% CTOR</h3>
+          <table style="font-size:11px;">
+            <thead><tr><th>Canal</th><th class="r">Jan</th><th class="r">Fev</th><th class="r">Mar</th><th class="r">MoM</th></tr></thead>
+            <tbody>
+              <tr><td>Email</td><td class="r">2,05%</td><td class="r">0,88%</td><td class="r">0,59%</td><td class="r rd">-0,29</td></tr>
+              <tr><td>DM</td><td class="r">16,31%</td><td class="r">26,12%</td><td class="r">18,78%</td><td class="r rd">-7,34</td></tr>
+              <tr><td>InApp</td><td class="r">1,70%</td><td class="r">2,50%</td><td class="r">6,23%</td><td class="r g">+3,73</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="footnote">Email OR 19,4% é 2,4x a média da BU — efeito Epic (audiência Alta Renda, hiper-segmentada). Mas CTR 0,11% e CTOR 0,59% em queda livre: público abre mas não clica. InApp CTOR 6,23% é o melhor da BU — campanhas Epic com conteúdo relevante. DM altamente volátil (71K envios em fev vs 562K em mar) — amostra pequena distorce os KPIs.</div>
+    </div>
+
+    <!-- Diagnóstico cross-vertical -->
+    <div class="insight-box insight-neutral" style="margin-top:16px;">
+      <strong>Diagnóstico Cross-Vertical — Março 2026:</strong><br><br>
+      <strong>1. Email OR: Segmentos 19,4% > Payments 7,2% > Banking 8,1%.</strong> Segmentos lidera por audiência Epic (hiper-segmentada). Payments tem a maior queda trimestral (-2,3 pp desde jan). Banking estável — mix de campanhas maduro.<br><br>
+      <strong>2. Push CTR: Banking 1,75% > Payments 1,14% > Segmentos 2,21%.</strong> Segmentos tem CTR alto mas volume mínimo (367K). Banking cresce consistentemente (+0,30 pp) com triggers de portabilidade e Open Finance. Payments recupera de fev (+0,22 pp).<br><br>
+      <strong>3. InApp CTOR: Segmentos 6,23% > Payments 3,29% > Banking 2,77%.</strong> Segmentos se destaca pelo conteúdo Epic (base pequena, alta relevância). Payments é quem mais melhora no trimestre (+1,36 pp). Banking mantém CTOR estável apesar do volume 28x maior — rádio não dilui qualidade de clique.<br><br>
+      <strong>4. DM é o canal com maior variância entre verticais.</strong> Banking OR 9,3% (rádio, 30,8M), Payments OR 7,7% (352K), Segmentos OR 7,0% (562K). CTOR revela: Segmentos 18,8% vs Banking 12,9% vs Payments 10,8%. Quem abre, clica mais em Segmentos — mas volume impede conclusões robustas.
+    </div>
+  </div>
+</section>
+
+<!-- ==================== S2.3: DESTAQUES (normalizado por faixa) ==================== -->
+<section style="background:var(--bg-alt);">
+  <div class="container">
+    <div>
+      <div class="section-label" style="color:var(--blue);"><span class="section-num" style="background:var(--blue);">2.3</span> Destaques de Engajamento</div>
+      <h2>Campanhas Destaque — Março 2026</h2>
+      <p class="subtitle">Engajamento normalizado por faixa de audiência. Cada campanha é comparada com a média da sua faixa no canal (mín. 100K envios). Campanhas classificadas pelo delta (pp) vs. benchmark da faixa.</p>
+    </div>
+
+    <!-- Referência: médias por faixa -->
+    <div class="card" style="margin-top:20px;">
+      <h3 style="margin-bottom:4px;">Benchmarks por Faixa de Audiência</h3>
+      <p style="font-size:11px;color:var(--text-dim);margin-bottom:12px;">Médias ponderadas por volume — base de comparação para classificar top/bottom</p>
+      <div class="grid-2">
+        <div>
+          <table style="font-size:11px;">
+            <thead><tr><th>Faixa</th><th class="r">Email OR</th><th class="r">DM OR</th></tr></thead>
+            <tbody>
+              <tr><td>Hiper-seg. (&lt;500K)</td><td class="r">13,94%</td><td class="r">7,09%</td></tr>
+              <tr><td>Segmentada (500K–1M)</td><td class="r">6,72%</td><td class="r">16,06%</td></tr>
+              <tr><td>Média (1M–5M)</td><td class="r">7,79%</td><td class="r">8,89%</td></tr>
+              <tr><td>Grande (5M–10M)</td><td class="r">7,24%</td><td class="r">9,08%</td></tr>
+              <tr><td>Massiva (&gt;10M)</td><td class="r">—</td><td class="r">9,21%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <table style="font-size:11px;">
+            <thead><tr><th>Faixa</th><th class="r">Push CTR</th><th class="r">InApp CTOR</th></tr></thead>
+            <tbody>
+              <tr><td>Hiper-seg. (&lt;500K)</td><td class="r">2,97%</td><td class="r">4,11%</td></tr>
+              <tr><td>Segmentada (500K–1M)</td><td class="r">3,16%</td><td class="r">2,17%</td></tr>
+              <tr><td>Média (1M–5M)</td><td class="r">0,84%</td><td class="r">1,14%</td></tr>
+              <tr><td>Grande (5M–10M)</td><td class="r">1,15%</td><td class="r">0,89%</td></tr>
+              <tr><td>Massiva (&gt;10M)</td><td class="r">—</td><td class="r">3,92%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="footnote">KPI primário por canal: Email=OR, DM=OR, Push=CTR (abertura=clique), InApp=CTOR. Faixas definem grupos comparáveis — campanhas só competem dentro da mesma faixa e canal.</div>
+    </div>
+
+    <!-- TOP Performers -->
+    <div class="card" style="margin-top:16px;">
+      <h3 style="margin-bottom:4px;color:var(--green);">Top Performers — Acima da Média da Faixa</h3>
+      <p style="font-size:11px;color:var(--text-dim);margin-bottom:12px;">Campanhas com melhor engajamento relativo. Ordenadas por desvio percentual vs. benchmark da faixa.</p>
+      <table style="font-size:11px;">
+        <thead><tr><th>Canal</th><th>Campanha</th><th>Faixa</th><th class="r">Envios</th><th class="r">KPI</th><th class="r">Média Faixa</th><th class="r">Δ pp</th><th class="r">Δ %</th></tr></thead>
+        <tbody>
+          <tr style="background:rgba(22,163,74,0.05);">
+            <td><span class="tag tag-purple" style="font-size:9px;">InApp</span></td>
+            <td>Blast — Ativ/Reativ Taxa</td><td style="font-size:10px;">Segmentada</td>
+            <td class="r">913K</td><td class="r g">CTOR 8,93%</td><td class="r">2,17%</td>
+            <td class="r g">+6,76</td><td class="r g">+311,5%</td>
+          </tr>
+          <tr style="background:rgba(22,163,74,0.05);">
+            <td><span class="tag tag-blue" style="font-size:9px;">Push</span></td>
+            <td>Portabilidade — Carrinho Aband.</td><td style="font-size:10px;">Hiper-seg.</td>
+            <td class="r">180K</td><td class="r g">CTR 11,47%</td><td class="r">2,97%</td>
+            <td class="r g">+8,50</td><td class="r g">+286,2%</td>
+          </tr>
+          <tr style="background:rgba(22,163,74,0.05);">
+            <td><span class="tag tag-blue" style="font-size:9px;">Push</span></td>
+            <td>Open Finance Consentimento</td><td style="font-size:10px;">Hiper-seg.</td>
+            <td class="r">278K</td><td class="r g">CTR 10,61%</td><td class="r">2,97%</td>
+            <td class="r g">+7,64</td><td class="r g">+257,2%</td>
+          </tr>
+          <tr style="background:rgba(22,163,74,0.05);">
+            <td><span class="tag tag-blue" style="font-size:9px;">Push</span></td>
+            <td>Veículos IPVA CONHECEM</td><td style="font-size:10px;">Média</td>
+            <td class="r">1,1M</td><td class="r g">CTR 2,10%</td><td class="r">0,84%</td>
+            <td class="r g">+1,26</td><td class="r g">+150,0%</td>
+          </tr>
+          <tr style="background:rgba(22,163,74,0.05);">
+            <td><span class="tag tag-blue" style="font-size:9px;">Push</span></td>
+            <td>Carrinho Abandonado OPF</td><td style="font-size:10px;">Segmentada</td>
+            <td class="r">810K</td><td class="r g">CTR 6,94%</td><td class="r">3,16%</td>
+            <td class="r g">+3,78</td><td class="r g">+119,6%</td>
+          </tr>
+          <tr style="background:rgba(22,163,74,0.03);">
+            <td><span class="tag tag-green" style="font-size:9px;">Email</span></td>
+            <td>Epic | Lançamento Aquisição</td><td style="font-size:10px;">Hiper-seg.</td>
+            <td class="r">149K</td><td class="r g">OR 28,69%</td><td class="r">13,94%</td>
+            <td class="r g">+14,75</td><td class="r g">+105,8%</td>
+          </tr>
+          <tr style="background:rgba(22,163,74,0.03);">
+            <td><span class="tag tag-green" style="font-size:9px;">Email</span></td>
+            <td>Epic — Isenção Remanescente</td><td style="font-size:10px;">Hiper-seg.</td>
+            <td class="r">237K</td><td class="r g">OR 28,64%</td><td class="r">13,94%</td>
+            <td class="r g">+14,70</td><td class="r g">+105,5%</td>
+          </tr>
+          <tr style="background:rgba(22,163,74,0.03);">
+            <td><span class="tag tag-purple" style="font-size:9px;">InApp</span></td>
+            <td>Open Finance Consentimento</td><td style="font-size:10px;">Hiper-seg.</td>
+            <td class="r">468K</td><td class="r g">CTOR 8,10%</td><td class="r">4,11%</td>
+            <td class="r g">+3,99</td><td class="r g">+97,1%</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-blue" style="font-size:9px;">DM</span></td>
+            <td>Portabilidade BAU</td><td style="font-size:10px;">Hiper-seg.</td>
+            <td class="r">491K</td><td class="r g">OR 11,64%</td><td class="r">7,09%</td>
+            <td class="r g">+4,55</td><td class="r g">+64,2%</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-purple" style="font-size:9px;">InApp</span></td>
+            <td>Veículos IPVA CONHECEM</td><td style="font-size:10px;">Segmentada</td>
+            <td class="r">518K</td><td class="r g">CTOR 3,34%</td><td class="r">2,17%</td>
+            <td class="r g">+1,17</td><td class="r g">+53,9%</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-blue" style="font-size:9px;">Push</span></td>
+            <td>CB Progressivo</td><td style="font-size:10px;">Grande</td>
+            <td class="r">5,7M</td><td class="r g">CTR 1,57%</td><td class="r">1,15%</td>
+            <td class="r g">+0,42</td><td class="r g">+36,5%</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-purple" style="font-size:9px;">InApp</span></td>
+            <td>Veículos IPVA NÃO CONHECEM</td><td style="font-size:10px;">Média</td>
+            <td class="r">2,3M</td><td class="r g">CTOR 1,50%</td><td class="r">1,14%</td>
+            <td class="r g">+0,36</td><td class="r g">+31,6%</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="footnote"><strong>Padrões claros:</strong> Triggers (carrinho abandonado, consentimento) dominam os tops — audiência quente no momento da ação. Blast Ativação Taxa em InApp é o destaque absoluto do mês: CTOR 4x a média da faixa segmentada. Epic mantém liderança em Email Hiper-seg, mas apenas por OR — CTR 0,08% indica abertura sem conversão.</div>
+    </div>
+
+    <!-- BOTTOM Performers -->
+    <div class="card" style="margin-top:16px;">
+      <h3 style="margin-bottom:4px;color:var(--red);">Bottom Performers — Abaixo da Média da Faixa</h3>
+      <p style="font-size:11px;color:var(--text-dim);margin-bottom:12px;">Campanhas com engajamento abaixo do esperado para sua faixa. Oportunidades de otimização de copy, CTA ou redirecionamento de canal.</p>
+      <table style="font-size:11px;">
+        <thead><tr><th>Canal</th><th>Campanha</th><th>Faixa</th><th class="r">Envios</th><th class="r">KPI</th><th class="r">Média Faixa</th><th class="r">Δ pp</th><th class="r">Δ %</th></tr></thead>
+        <tbody>
+          <tr style="background:rgba(220,38,38,0.05);">
+            <td><span class="tag tag-blue" style="font-size:9px;">DM</span></td>
+            <td>Epic — Isenção Remanescente</td><td style="font-size:10px;">Hiper-seg.</td>
+            <td class="r">202K</td><td class="r rd">OR 0,77%</td><td class="r">7,09%</td>
+            <td class="r rd">-6,32</td><td class="r rd">-89,1%</td>
+          </tr>
+          <tr style="background:rgba(220,38,38,0.05);">
+            <td><span class="tag tag-blue" style="font-size:9px;">Push</span></td>
+            <td>Cofrinho | Régua Cash In</td><td style="font-size:10px;">Hiper-seg.</td>
+            <td class="r">280K</td><td class="r rd">CTR 0,37%</td><td class="r">2,97%</td>
+            <td class="r rd">-2,60</td><td class="r rd">-87,5%</td>
+          </tr>
+          <tr style="background:rgba(220,38,38,0.05);">
+            <td><span class="tag tag-blue" style="font-size:9px;">Push</span></td>
+            <td>Cofrinhos Régua Criação Cofrinho</td><td style="font-size:10px;">Segmentada</td>
+            <td class="r">806K</td><td class="r rd">CTR 0,40%</td><td class="r">3,16%</td>
+            <td class="r rd">-2,76</td><td class="r rd">-87,3%</td>
+          </tr>
+          <tr style="background:rgba(220,38,38,0.05);">
+            <td><span class="tag tag-blue" style="font-size:9px;">DM</span></td>
+            <td>Epic | Teste Frequência (AON)</td><td style="font-size:10px;">Hiper-seg.</td>
+            <td class="r">161K</td><td class="r rd">OR 0,91%</td><td class="r">7,09%</td>
+            <td class="r rd">-6,18</td><td class="r rd">-87,2%</td>
+          </tr>
+          <tr style="background:rgba(220,38,38,0.05);">
+            <td><span class="tag tag-purple" style="font-size:9px;">InApp</span></td>
+            <td>Cofrinho | Incentivo New Money</td><td style="font-size:10px;">Hiper-seg.</td>
+            <td class="r">469K</td><td class="r rd">CTOR 0,83%</td><td class="r">4,11%</td>
+            <td class="r rd">-3,28</td><td class="r rd">-79,8%</td>
+          </tr>
+          <tr style="background:rgba(220,38,38,0.03);">
+            <td><span class="tag tag-purple" style="font-size:9px;">InApp</span></td>
+            <td>Cofrinho | Régua Cash In</td><td style="font-size:10px;">Segmentada</td>
+            <td class="r">648K</td><td class="r rd">CTOR 0,61%</td><td class="r">2,17%</td>
+            <td class="r rd">-1,56</td><td class="r rd">-71,9%</td>
+          </tr>
+          <tr style="background:rgba(220,38,38,0.03);">
+            <td><span class="tag tag-green" style="font-size:9px;">Email</span></td>
+            <td>Underage | Comunicado Termos</td><td style="font-size:10px;">Hiper-seg.</td>
+            <td class="r">445K</td><td class="r rd">OR 5,15%</td><td class="r">13,94%</td>
+            <td class="r rd">-8,79</td><td class="r rd">-63,1%</td>
+          </tr>
+          <tr style="background:rgba(220,38,38,0.03);">
+            <td><span class="tag tag-green" style="font-size:9px;">Email</span></td>
+            <td>Cofrinho turb. Incentivo Aporte</td><td style="font-size:10px;">Hiper-seg.</td>
+            <td class="r">157K</td><td class="r rd">OR 6,66%</td><td class="r">13,94%</td>
+            <td class="r rd">-7,28</td><td class="r rd">-52,2%</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-purple" style="font-size:9px;">InApp</span></td>
+            <td>Cofrinhos Régua Criação Cofrinho</td><td style="font-size:10px;">Segmentada</td>
+            <td class="r">720K</td><td class="r rd">CTOR 1,15%</td><td class="r">2,17%</td>
+            <td class="r rd">-1,02</td><td class="r rd">-47,0%</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-blue" style="font-size:9px;">Push</span></td>
+            <td>Ativ/Reativ — Taxa Zero Pix Parc.</td><td style="font-size:10px;">Segmentada</td>
+            <td class="r">570K</td><td class="r rd">CTR 1,69%</td><td class="r">3,16%</td>
+            <td class="r rd">-1,47</td><td class="r rd">-46,5%</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-purple" style="font-size:9px;">InApp</span></td>
+            <td>Cofrinhos (Rádio)</td><td style="font-size:10px;">Massiva</td>
+            <td class="r">20,1M</td><td class="r rd">CTOR 2,21%</td><td class="r">3,92%</td>
+            <td class="r rd">-1,71</td><td class="r rd">-43,6%</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-blue" style="font-size:9px;">Push</span></td>
+            <td>Alto Propenso 12X/12%</td><td style="font-size:10px;">Média</td>
+            <td class="r">1,1M</td><td class="r rd">CTR 0,53%</td><td class="r">0,84%</td>
+            <td class="r rd">-0,31</td><td class="r rd">-36,9%</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="footnote"><strong>Produto Cofrinhos é bottom cross-canal:</strong> aparece 5x na lista (Push, InApp, Email) — engajamento consistentemente abaixo da média em todas as faixas. Epic em DM tem OR ~0,8% (vs 7,1% da faixa) — canal inadequado. Underage (obrigatório/compliance) naturalmente tem baixo engajamento.</div>
+    </div>
+
+    <!-- Diagnóstico -->
+    <div class="insight-box insight-warn" style="margin-top:16px;">
+      <strong>Diagnóstico Consolidado — Normalizado por Faixa de Audiência</strong><br><br>
+      <strong>1. Triggers dominam os tops em qualquer faixa.</strong> Carrinho Abandonado (Push +286%), Open Finance Consentimento (Push +257%, InApp +97%). Audiência quente + momento certo = engajamento 2-4x superior ao benchmark. Recomendação: expandir triggers pra mais jornadas.<br><br>
+      <strong>2. Cofrinhos é o produto com maior gap de engajamento.</strong> Aparece 5x nos bottoms cross-canal (Push -87%, InApp -72%, Email -52%). Mesmo em faixas hiper-segmentadas (<500K), fica muito abaixo. O problema não é volume — é relevância da mensagem. Ação: revisar proposta de valor, copy e CTA de todas as campanhas de Cofrinhos.<br><br>
+      <strong>3. Epic funciona em Email, falha em DM.</strong> OR 28,7% em Email (+106% vs faixa) mas apenas 0,8% em DM (-89%). Público Alta Renda engaja com email mas ignora DM. Recomendação: realocar investimento DM de Epic pra canais com evidência de engajamento (Email, InApp).<br><br>
+      <strong>4. Blast Ativação Taxa — case de sucesso.</strong> CTOR 8,93% em InApp segmentada (+312% vs faixa). Combina audiência com propensão + CTA direto de taxa zero. Modelo a replicar pra outras ofertas transacionais.<br><br>
+      <strong>5. Rádio InApp tem comportamento misto.</strong> Open Finance (CTOR 4,8%, +23% vs faixa massiva) performa bem. Cofrinhos (CTOR 2,2%, -44%) e Rendimento (CTOR 3,9%, -1%) ficam abaixo. Mesmo em rádio, o produto Cofrinhos sub-performa.
+    </div>
+  </div>
+</section>
+<!-- ==================== FOOTER ==================== -->
+<section style="min-height:auto;padding:40px 28px;">
+  <div class="container" style="text-align:center;">
+    <p style="color:var(--text-dim);font-size:11px;">
+      Fonte: picpay.self_service_analytics.pf_growth_notifications_reporting (is_delivered = true) |
+      MAU: picpay.consumers.daily_app_accesses |
+      Campanhas: picpay.validation.tb_book_growth_nome_campanhas |
+      Campanha 9760674755 mantida como Segmentos em todas as seções |
+      Mês cheio: 01/03 a 31/03/2026 |
+      Gerado em 07/04/2026
+    </p>
+  </div>
+</section>
+
+<script>
+Chart.register(ChartDataLabels);
+Chart.defaults.font.family="'Inter',sans-serif";
+Chart.defaults.font.size=11;
+Chart.defaults.color='#64748B';
+Chart.defaults.plugins.legend.labels.usePointStyle=true;
+Chart.defaults.plugins.legend.labels.pointStyle='circle';
+Chart.defaults.plugins.legend.labels.padding=14;
+const noG={display:false};
+function fM(v){if(v>=1e9)return(v/1e9).toFixed(1)+'B';if(v>=1e6)return(v/1e6).toFixed(1)+'M';if(v>=1e3)return(v/1e3).toFixed(1)+'K';return v.toString();}
+
+const PAL={green:'#16A34A',teal:'#0D9488',blue:'#3B82F6',slate:'#94A3B8',gray:'#CBD5E1',light:'#E2E8F0',yellow:'#D97706'};
+
+const totalTopPlugin={id:'totalTop',afterDatasetsDraw(chart){
+  if(!chart.options.plugins.totalTop||!chart.options.plugins.totalTop.display)return;
+  const{ctx}=chart;const meta=chart.getDatasetMeta(chart.data.datasets.length-1);
+  meta.data.forEach((bar,i)=>{let t=0;chart.data.datasets.forEach(ds=>{t+=(ds.data[i]||0);});
+  ctx.save();ctx.font='bold 10px Inter';ctx.fillStyle='#1E293B';ctx.textAlign='center';ctx.fillText(fM(t),bar.x,bar.y-6);ctx.restore();});
+}};
+Chart.register(totalTopPlugin);
+
+// S2: Canais
+new Chart(document.getElementById('chartCanais'),{type:'bar',
+  data:{labels:['Out/25','Nov/25','Dez/25','Jan/26','Fev/26','Mar/26'],datasets:[
+    {label:'InApp',data:[83468551,86032752,69606205,22096297,79722843,105212726],backgroundColor:PAL.green,borderRadius:2},
+    {label:'Push',data:[83190216,88206606,74142882,50998805,75000430,27057482],backgroundColor:PAL.blue,borderRadius:2},
+    {label:'Email',data:[56398661,57483560,52422117,33966097,31656875,22215011],backgroundColor:PAL.slate,borderRadius:2},
+    {label:'DM',data:[22883052,15705972,6944838,5187562,3795288,31754066],backgroundColor:PAL.gray,borderRadius:2},
+    {label:'WhatsApp',data:[263156,316555,378892,122820,566591,67454],backgroundColor:PAL.light,borderRadius:2}
+  ]},options:{responsive:true,plugins:{totalTop:{display:true},datalabels:{color:function(c){return c.datasetIndex>=3?'#374151':'#fff';},font:{weight:'bold',size:9},formatter:function(v,c){let t=0;c.chart.data.datasets.forEach(d=>{t+=d.data[c.dataIndex]||0;});const p=v/t*100;if(p<5)return '';return fM(v)+'\n'+p.toFixed(0)+'%';},anchor:'center',align:'center',textAlign:'center'}},scales:{x:{stacked:true,grid:noG},y:{stacked:true,display:false}}}
+});
+
+// S3: Campanhas
+new Chart(document.getElementById('chartCampanhas'),{type:'bar',
+  data:{labels:['Out/25','Nov/25','Dez/25','Jan/26','Fev/26','Mar/26'],datasets:[
+    {label:'Ação Pontual',data:[52,44,46,35,45,44],backgroundColor:PAL.slate,borderRadius:3},
+    {label:'Régua',data:[26,31,34,30,28,33],backgroundColor:PAL.green,borderRadius:3}
+  ]},options:{responsive:true,plugins:{totalTop:{display:true},datalabels:{color:'#fff',font:{weight:'bold',size:11},formatter:v=>v,anchor:'center',align:'center'}},scales:{x:{stacked:true,grid:noG},y:{stacked:true,display:false}}}
+});
+
+// S5: Verticais G1 (4 meses)
+new Chart(document.getElementById('chartVertical1'),{type:'bar',
+  data:{labels:['Dez/25','Jan/26','Fev/26','Mar/26'],datasets:[
+    {label:'Banking',data:[97421929,48918336,16989810,130265482],backgroundColor:PAL.green,borderRadius:2},
+    {label:'Payments',data:[68001426,58926663,157103021,53134074],backgroundColor:PAL.blue,borderRadius:2},
+    {label:'Segmentos',data:[24570614,3565514,16663811,2907183],backgroundColor:PAL.slate,borderRadius:2},
+    {label:'Cross',data:[13500965,961068,6567,0],backgroundColor:PAL.light,borderRadius:2}
+  ]},options:{responsive:true,plugins:{totalTop:{display:true},datalabels:{color:function(c){return c.datasetIndex>=2?'#374151':'#fff';},font:{weight:'bold',size:11},formatter:function(v,c){let t=0;c.chart.data.datasets.forEach(d=>{t+=d.data[c.dataIndex]||0;});const p=v/t*100;if(p<5)return '';return fM(v)+'\n'+p.toFixed(0)+'%';},anchor:'center',align:'center',textAlign:'center'}},scales:{x:{stacked:true,grid:noG},y:{stacked:true,display:false}}}
+});
+
+// S5: Verticais + Rádio G2 (4 meses)
+new Chart(document.getElementById('chartVertical2'),{type:'bar',
+  data:{labels:['Dez/25','Jan/26','Fev/26','Mar/26'],datasets:[
+    {label:'Rádio',data:[0,0,41146379,112220157],backgroundColor:PAL.yellow,borderRadius:2},
+    {label:'Banking (s/ rádio)',data:[97421929,48918336,16989810,34051180],backgroundColor:PAL.green,borderRadius:2},
+    {label:'Payments (s/ rádio)',data:[68001426,58926663,130102676,37324197],backgroundColor:PAL.blue,borderRadius:2},
+    {label:'Segmentos (s/ rádio)',data:[24570613,3565514,2517777,2711205],backgroundColor:PAL.slate,borderRadius:2},
+    {label:'Cross',data:[13500965,961068,6567,0],backgroundColor:PAL.light,borderRadius:2}
+  ]},options:{responsive:true,plugins:{totalTop:{display:true},datalabels:{color:function(c){return c.datasetIndex>=3?'#374151':'#fff';},font:{weight:'bold',size:10},formatter:function(v,c){let t=0;c.chart.data.datasets.forEach(d=>{t+=d.data[c.dataIndex]||0;});const p=v/t*100;if(p<5)return '';return fM(v)+'\n'+p.toFixed(0)+'%';},anchor:'center',align:'center',textAlign:'center'}},scales:{x:{stacked:true,grid:noG},y:{stacked:true,display:false}}}
+});
+
+// S8: MAU
+new Chart(document.getElementById('chartMAU'),{type:'bar',
+  data:{labels:['Out/25','Nov/25','Dez/25','Jan/26','Fev/26','Mar/26'],datasets:[
+    {label:'MAU App',data:[22411877,22330818,21692076,19911249,21644854,21474019],backgroundColor:PAL.green,borderRadius:2},
+    {label:'Não-MAU',data:[14922051,8123111,9707901,11411556,12308561,8019123],backgroundColor:PAL.gray,borderRadius:2}
+  ]},options:{responsive:true,plugins:{totalTop:{display:true},datalabels:{color:function(c){return c.datasetIndex===1?'#374151':'#fff';},font:{weight:'bold',size:10},formatter:function(v,c){const mau=[22411877,22330818,21692076,19911249,21644854,21474019];const nm=[14922051,8123111,9707901,11411556,12308561,8019123];let t=mau[c.dataIndex]+nm[c.dataIndex];const p=v/t*100;if(p<8)return '';return fM(v)+'\n'+p.toFixed(1)+'%';},anchor:'center',align:'center',textAlign:'center'}},scales:{x:{stacked:true,grid:noG},y:{stacked:true,display:false}}}
+});
+
+// S9: Mix Verticais Donut (MAU only)
+new Chart(document.getElementById('chartMixVertical'),{type:'doughnut',
+  data:{labels:['Banking + Payments','Banking','Payments','Bank+Pay+Seg','Bank+Seg','Segmentos','Pay+Seg'],
+    datasets:[{data:[70.79,21.29,5.05,1.68,0.66,0.41,0.11],backgroundColor:[PAL.green,PAL.teal,PAL.blue,PAL.slate,PAL.gray,PAL.light,'#F1F5F9']}]
+  },options:{responsive:true,cutout:'55%',plugins:{datalabels:{color:function(c){return c.dataIndex>=3?'#374151':'#fff';},font:{weight:'bold',size:10},formatter:function(v){return v>=3?v.toFixed(1)+'%':'';}},legend:{position:'bottom',labels:{font:{size:10},padding:8}},totalTop:{display:false}}}
+});
+
+// Keyboard nav
+const ss=document.querySelectorAll('section');let c=0;
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowDown'||e.key===' '){e.preventDefault();c=Math.min(c+1,ss.length-1);ss[c].scrollIntoView({behavior:'smooth'});}
+  else if(e.key==='ArrowUp'){e.preventDefault();c=Math.max(c-1,0);ss[c].scrollIntoView({behavior:'smooth'});}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPIC — Análise de Aquisição</title>
+    <style>
+        @page { size: A4; margin: 2cm; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #fff;
+        }
+        h1 {
+            color: #1a1a1a;
+            border-bottom: 3px solid #21A366;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            font-size: 2.2em;
+        }
+        h2 {
+            color: #2563EB;
+            margin-top: 32px;
+            font-size: 1.8em;
+            border-left: 4px solid #21A366;
+            padding-left: 12px;
+        }
+        h3 {
+            color: #374151;
+            margin-top: 24px;
+            font-size: 1.3em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        th {
+            background: #F3F4F6;
+            color: #1F2937;
+            font-weight: 600;
+            text-align: left;
+            padding: 12px;
+            border-bottom: 2px solid #E5E7EB;
+        }
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        tr:hover {
+            background: #F9FAFB;
+        }
+        strong {
+            color: #1F2937;
+            font-weight: 600;
+        }
+        blockquote {
+            border-left: 4px solid #FCD34D;
+            background: #FFFBEB;
+            padding: 12px 20px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #92400E;
+        }
+        code {
+            background: #F3F4F6;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #DC2626;
+        }
+        hr {
+            border: none;
+            border-top: 2px solid #E5E7EB;
+            margin: 40px 0;
+        }
+        .emoji {
+            font-size: 1.2em;
+        }
+        @media print {
+            body {
+                max-width: 100%;
+                padding: 20px;
+            }
+            h1 {
+                page-break-before: always;
+            }
+            h1:first-of-type {
+                page-break-before: avoid;
+            }
+            table {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+<h1>📊 EPIC — Análise de Aquisição: Ofertas vs Engajamento</h1>
+<p><strong>Data:</strong> 10 de Março de 2026<br />
+<strong>Analista:</strong> ABA (Analista de Business Analytics)<br />
+<strong>Período de Análise:</strong> Últimos 30 dias (snapshot ofertas: atual)</p>
+<hr />
+<h2>🎯 Objetivo</h2>
+<p>Entender o panorama dos usuários com ofertas ativas EPIC em relação ao engajamento (MAU App e MAT), identificar oportunidades de aquisição e propor alavancas para aumentar a conversão.</p>
+<hr />
+<h2>📋 Sumário Executivo</h2>
+<h3><strong>Problema Validado:</strong></h3>
+<p>✅ <strong>64% dos usuários com oferta ativa EPIC estão completamente inativos</strong> (não acessam o app nem transacionam nos últimos 30 dias)</p>
+<h3><strong>Números-Chave:</strong></h3>
+<ul>
+<li><strong>397.329 usuários</strong> com ofertas ativas EPIC</li>
+<li><strong>113.764 (28,6%)</strong> engajados (MAU + MAT)</li>
+<li><strong>256.599 (64,6%)</strong> inativos ou com baixo engajamento</li>
+<li><strong>73% dos inativos</strong> não transacionam há mais de 1 ano</li>
+</ul>
+<h3><strong>Impacto Potencial:</strong></h3>
+<p>Focando nos segmentos certos, podemos adicionar <strong>+24 mil contratações</strong> = <strong>R$ 1,2M MRR</strong> (+R$ 14,4M ARR)</p>
+<hr />
+<h2>1️⃣ Diagnóstico: Segmentação de Ofertas</h2>
+<h3><strong>1.1 Distribuição Geral (397.329 usuários)</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Segmento</th>
+<th>Volume</th>
+<th>% Total</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MAU + MAT</strong> ✅✅</td>
+<td>113.764</td>
+<td>28,63%</td>
+<td>Acessam o app <strong>E</strong> transacionam</td>
+</tr>
+<tr>
+<td><strong>MAU sem MAT</strong> ⚠️</td>
+<td>26.966</td>
+<td>6,79%</td>
+<td>Acessam mas <strong>não transacionam</strong></td>
+</tr>
+<tr>
+<td><strong>MAT sem MAU</strong> 🤔</td>
+<td>1.353</td>
+<td>0,34%</td>
+<td>Transacionam fora do app (API/TEF)</td>
+</tr>
+<tr>
+<td><strong>Sem MAU sem MAT</strong> ❌❌</td>
+<td>255.246</td>
+<td>64,24%</td>
+<td><strong>Completamente inativos</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3><strong>1.2 Reagrupamento por Potencial</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Grupo</th>
+<th>Volume</th>
+<th>%</th>
+<th>Perfil</th>
+<th>Prioridade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Engajados</strong></td>
+<td>115.117</td>
+<td>29,0%</td>
+<td>MAU+MAT ou MAT puro</td>
+<td>🟢 <strong>P0</strong></td>
+</tr>
+<tr>
+<td><strong>Navegadores</strong></td>
+<td>26.966</td>
+<td>6,8%</td>
+<td>MAU sem MAT</td>
+<td>🟡 <strong>P1</strong></td>
+</tr>
+<tr>
+<td><strong>Inativos</strong></td>
+<td>255.246</td>
+<td>64,2%</td>
+<td>Sem MAU nem MAT</td>
+<td>🔴 <strong>P2</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2️⃣ Deep Dive: Perfil dos Inativos (255.246 usuários)</h2>
+<h3><strong>2.1 Tempo de Inatividade</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Faixa</th>
+<th>Volume</th>
+<th>%</th>
+<th>Média de Dias Inativo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>31-90 dias atrás</strong></td>
+<td>7.453</td>
+<td>2,90%</td>
+<td>55 dias</td>
+</tr>
+<tr>
+<td><strong>91-180 dias atrás</strong></td>
+<td>4.601</td>
+<td>1,79%</td>
+<td>133 dias</td>
+</tr>
+<tr>
+<td><strong>6 meses - 1 ano atrás</strong></td>
+<td>8.319</td>
+<td>3,24%</td>
+<td>278 dias</td>
+</tr>
+<tr>
+<td><strong>1+ ano atrás</strong></td>
+<td>188.130</td>
+<td><strong>73,32%</strong></td>
+<td>1.568 dias (4,3 anos)</td>
+</tr>
+<tr>
+<td><strong>Nunca transacionou</strong></td>
+<td>48.096</td>
+<td><strong>18,74%</strong></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Insight:</strong> 92% dos inativos estão dormentes há mais de 6 meses. Reativar essa base é um desafio de longo prazo.</p>
+<hr />
+<h3><strong>2.2 Tempo de Cadastro</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Faixa</th>
+<th>Volume</th>
+<th>%</th>
+<th>Média de Anos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0-30 dias</strong></td>
+<td>18</td>
+<td>0,01%</td>
+<td>0,07 anos</td>
+</tr>
+<tr>
+<td><strong>31-90 dias</strong></td>
+<td>358</td>
+<td>0,13%</td>
+<td>0,18 anos</td>
+</tr>
+<tr>
+<td><strong>91-180 dias</strong></td>
+<td>295</td>
+<td>0,10%</td>
+<td>0,39 anos</td>
+</tr>
+<tr>
+<td><strong>6 meses - 1 ano</strong></td>
+<td>1.632</td>
+<td>0,58%</td>
+<td>0,82 anos</td>
+</tr>
+<tr>
+<td><strong>1-2 anos</strong></td>
+<td>9.385</td>
+<td>3,33%</td>
+<td>1,53 anos</td>
+</tr>
+<tr>
+<td><strong>2+ anos</strong></td>
+<td>270.524</td>
+<td><strong>95,86%</strong></td>
+<td><strong>5,58 anos</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Insight:</strong> 96% são cadastros antigos (2+ anos). Não são novos usuários que não engajaram — são usuários que <strong>pararam</strong> de usar a PicPay.</p>
+<hr />
+<h3><strong>2.3 Produtos Usados Historicamente (quando ativos)</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Produto</th>
+<th>Usuários</th>
+<th>% Penetração</th>
+<th>Volume Transações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PIX P2P</strong></td>
+<td>120.662</td>
+<td>51,8%</td>
+<td>3.286.402</td>
+</tr>
+<tr>
+<td><strong>BIZ</strong></td>
+<td>90.232</td>
+<td>38,7%</td>
+<td>1.374.134</td>
+</tr>
+<tr>
+<td><strong>Boletos</strong></td>
+<td>74.401</td>
+<td>31,9%</td>
+<td>1.062.384</td>
+</tr>
+<tr>
+<td><strong>PIX Mesmo Titular</strong></td>
+<td>71.690</td>
+<td>30,8%</td>
+<td>1.122.432</td>
+</tr>
+<tr>
+<td><strong>PIX P2B</strong></td>
+<td>48.536</td>
+<td>20,8%</td>
+<td>1.249.850</td>
+</tr>
+<tr>
+<td><strong>E-commerce</strong></td>
+<td>50.167</td>
+<td>21,5%</td>
+<td>355.019</td>
+</tr>
+<tr>
+<td><strong>TED Cashout</strong></td>
+<td>42.690</td>
+<td>18,3%</td>
+<td>297.752</td>
+</tr>
+<tr>
+<td><strong>Recarga de Celular</strong></td>
+<td>29.443</td>
+<td>12,6%</td>
+<td>304.035</td>
+</tr>
+<tr>
+<td><strong>Mobilidade</strong></td>
+<td>17.601</td>
+<td>7,6%</td>
+<td>848.697</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Insight:</strong> Quando ativos, 52% usavam PIX (P2P/P2B). Eram transacionadores, não apenas navegadores.</p>
+<hr />
+<h2>3️⃣ Análise de Oportunidade</h2>
+<h3><strong>3.1 Segmentação por Potencial de Conversão</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Segmento</th>
+<th>Volume</th>
+<th>Taxa Conversão Estimada</th>
+<th>Contratações Potenciais</th>
+<th>MRR Potencial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Engajados (MAU+MAT)</strong></td>
+<td>115.117</td>
+<td>20%</td>
+<td>23.023</td>
+<td>R$ 1.148.848</td>
+</tr>
+<tr>
+<td><strong>Navegadores (MAU sem MAT)</strong></td>
+<td>26.966</td>
+<td>5%</td>
+<td>1.348</td>
+<td>R$ 67.265</td>
+</tr>
+<tr>
+<td><strong>Inativos Recentes (&lt; 90d)</strong></td>
+<td>12.054</td>
+<td>3%</td>
+<td>362</td>
+<td>R$ 18.056</td>
+</tr>
+<tr>
+<td><strong>Inativos Antigos (&gt; 90d)</strong></td>
+<td>243.192</td>
+<td>&lt; 1%</td>
+<td>&lt; 2.000</td>
+<td>&lt; R$ 100.000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total Acionável (Engajados + Navegadores + Recentes):</strong> 154.137 usuários → <strong>24.733 contratações</strong> → <strong>R$ 1,23M MRR</strong></p>
+<hr />
+<h3><strong>3.2 Benchmark: Taxa de Conversão Atual</strong></h3>
+<p>Com 397.329 ofertas ativas e uma taxa de conversão histórica estimada em ~5%, esperaríamos <strong>~20 mil contratações/mês</strong>.</p>
+<p>Se focássemos apenas nos <strong>115 mil engajados</strong> (MAU+MAT), com taxa de 20%, teríamos <strong>23 mil contratações</strong> — <strong>mais eficiente e sustentável</strong>.</p>
+<hr />
+<h2>4️⃣ Alavancas de Aquisição Recomendadas</h2>
+<h3><strong>🟢 Alavanca 1: Hiper-Foco nos Engajados (P0)</strong></h3>
+<p><strong>Público:</strong> 115.117 usuários (MAU+MAT)<br />
+<strong>Ação:</strong>
+- Campanha push in-app com oferta destacada
+- Email marketing personalizado
+- Banner home do app (posição premium)
+- Notificação de "Oferta especial disponível"</p>
+<p><strong>Meta:</strong> Taxa de conversão de 20% (benchmark produtos de crédito alta renda)<br />
+<strong>Impacto:</strong> +23.023 contratações = <strong>R$ 1,15M MRR</strong> (+R$ 13,8M ARR)</p>
+<p><strong>Timeline:</strong> 30 dias<br />
+<strong>Investimento:</strong> Baixo (canais próprios)<br />
+<strong>ROI:</strong> Alto</p>
+<hr />
+<h3><strong>🟡 Alavanca 2: Conversão dos Navegadores (P1)</strong></h3>
+<p><strong>Público:</strong> 26.966 usuários (MAU sem MAT)<br />
+<strong>Ação:</strong>
+- Jornada in-app guiada: "Complete seu perfil e ganhe R$ 20"
+- Pop-up contextual ao acessar carteira ou PIX
+- Teste A/B de CTAs: "Ativar benefício" vs "Ver vantagens"</p>
+<p><strong>Meta:</strong> Taxa de conversão de 5%<br />
+<strong>Impacto:</strong> +1.348 contratações = <strong>R$ 67K MRR</strong> (+R$ 804K ARR)</p>
+<p><strong>Timeline:</strong> 45 dias<br />
+<strong>Investimento:</strong> Médio (dev + UX)<br />
+<strong>ROI:</strong> Médio-Alto</p>
+<hr />
+<h3><strong>🔴 Alavanca 3: Reativar Inativos Recentes (P2)</strong></h3>
+<p><strong>Público:</strong> 12.054 usuários (inativos 31-90 dias)<br />
+<strong>Ação:</strong>
+- Campanha "Volte e ganhe": Cashback R$ 50 na primeira transação
+- Email + SMS com senso de urgência
+- Oferta EPIC como "benefício exclusivo de retorno"</p>
+<p><strong>Meta:</strong> Taxa de reativação de 10% → conversão de 30% dos reativados<br />
+<strong>Impacto:</strong> +362 contratações = <strong>R$ 18K MRR</strong> (+R$ 216K ARR)</p>
+<p><strong>Timeline:</strong> 60 dias<br />
+<strong>Investimento:</strong> Alto (incentivo financeiro)<br />
+<strong>ROI:</strong> Médio</p>
+<hr />
+<h3><strong>❌ Não Priorizar: Inativos Antigos (&gt; 90 dias)</strong></h3>
+<p><strong>Público:</strong> 243.192 usuários<br />
+<strong>Razão:</strong> 92% dormentes há 6+ meses. Custo de reativação &gt; retorno esperado.<br />
+<strong>Recomendação:</strong> Parar de ofertar EPIC para este grupo. <strong>Concentrar esforços em leads qualificados</strong>.</p>
+<hr />
+<h2>5️⃣ Matriz de Decisão</h2>
+<table>
+<thead>
+<tr>
+<th>Ação</th>
+<th>Público</th>
+<th>Impacto</th>
+<th>Esforço</th>
+<th>Prioridade</th>
+<th>Prazo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Campanha push Engajados</strong></td>
+<td>115K</td>
+<td>🟢 Alto</td>
+<td>🟢 Baixo</td>
+<td>⭐⭐⭐ P0</td>
+<td>30d</td>
+</tr>
+<tr>
+<td><strong>Jornada guiada Navegadores</strong></td>
+<td>27K</td>
+<td>🟡 Médio</td>
+<td>🟡 Médio</td>
+<td>⭐⭐ P1</td>
+<td>45d</td>
+</tr>
+<tr>
+<td><strong>"Volte e Ganhe" Recentes</strong></td>
+<td>12K</td>
+<td>🟠 Baixo-Médio</td>
+<td>🔴 Alto</td>
+<td>⭐ P2</td>
+<td>60d</td>
+</tr>
+<tr>
+<td><strong>Parar ofertas Inativos Antigos</strong></td>
+<td>243K</td>
+<td>🟢 Economia</td>
+<td>🟢 Baixo</td>
+<td>⭐⭐⭐ P0</td>
+<td>Imediato</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>6️⃣ Impacto Consolidado (30 dias)</h2>
+<table>
+<thead>
+<tr>
+<th>Métrica</th>
+<th>Baseline</th>
+<th>Após Implementação</th>
+<th>Delta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ofertas Ativas</strong></td>
+<td>397.329</td>
+<td>154.137</td>
+<td>-243.192 (foco qualificado)</td>
+</tr>
+<tr>
+<td><strong>Taxa de Conversão</strong></td>
+<td>~5%</td>
+<td>~16%</td>
+<td>+220%</td>
+</tr>
+<tr>
+<td><strong>Contratações/mês</strong></td>
+<td>~20.000</td>
+<td>~24.733</td>
+<td>+4.733 (+24%)</td>
+</tr>
+<tr>
+<td><strong>MRR</strong></td>
+<td>~R$ 1,0M</td>
+<td>~R$ 2,23M</td>
+<td>+R$ 1,23M (+123%)</td>
+</tr>
+<tr>
+<td><strong>ARR</strong></td>
+<td>~R$ 12M</td>
+<td>~R$ 26,8M</td>
+<td>+R$ 14,8M (+123%)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>7️⃣ Próximos Passos</h2>
+<h3><strong>Imediato (Semana 1-2):</strong></h3>
+<ol>
+<li>✅ <strong>Parar ofertas</strong> para inativos 90+ dias (243K usuários)</li>
+<li>✅ <strong>Campanha push</strong> para 115K engajados (P0)</li>
+<li>⏳ <strong>Solicitar acesso</strong> a dados de conversão histórica EPIC para refinar taxas</li>
+</ol>
+<h3><strong>Curto Prazo (Semana 3-6):</strong></h3>
+<ol>
+<li>⏳ <strong>Desenvolver jornada guiada</strong> para navegadores (27K MAU sem MAT)</li>
+<li>⏳ <strong>Análise Fase 3:</strong> Quem contratou sendo Não-MAU? (benchmark de conversão)</li>
+<li>⏳ <strong>Modelo de propensão:</strong> Score 0-100 para priorizar comunicações</li>
+</ol>
+<h3><strong>Médio Prazo (2-3 meses):</strong></h3>
+<ol>
+<li>⏳ <strong>Campanha "Volte e Ganhe"</strong> para inativos recentes (12K usuários)</li>
+<li>⏳ <strong>Dashboard de acompanhamento:</strong> Taxa de conversão por segmento (semanal)</li>
+</ol>
+<hr />
+<h2>📎 Anexos</h2>
+<h3><strong>A1: Metodologia</strong></h3>
+<ul>
+<li><strong>Fonte de Dados:</strong> Databricks PicPay (<code>picpay.epic.offers</code>, <code>picpay.all_transactions</code>, <code>picpay.consumers.app_accesses</code>)</li>
+<li><strong>Período:</strong> Snapshot ofertas (atual) vs MAU/MAT (últimos 30 dias até D-1)</li>
+<li><strong>Definições:</strong></li>
+<li><strong>MAU App:</strong> Usuário com acesso logado nos últimos 30 dias</li>
+<li><strong>MAT:</strong> Usuário com transação aprovada nos últimos 30 dias</li>
+<li><strong>Oferta Ativa:</strong> <code>offer_status = 'ACTIVE'</code></li>
+</ul>
+<h3><strong>A2: Queries Executadas</strong></h3>
+<ol>
+<li>Cruzamento Ofertas x MAU App x MAT</li>
+<li>Perfil de inatividade (última transação)</li>
+<li>Tempo de cadastro</li>
+<li>Produtos históricos usados</li>
+</ol>
+<h3><strong>A3: Limitações</strong></h3>
+<ul>
+<li>Não analisamos contratações de usuários Não-MAU (Fase 3 pendente)</li>
+<li>Taxa de conversão estimada baseada em benchmarks de mercado (validar com histórico EPIC)</li>
+<li>Não consideramos canais externos (WhatsApp, SMS) no cálculo de MAU</li>
+</ul>
+<hr />
+<h2>📊 Conclusão</h2>
+<p><strong>O problema de aquisição do EPIC não é de volume de ofertas (397K), mas de qualidade da base ofertada.</strong></p>
+<p><strong>71% dos usuários com oferta estão inativos há meses ou anos.</strong> Concentrar esforços nos <strong>35% engajados</strong> (142K usuários) pode gerar <strong>+R$ 1,2M MRR</strong> com menor custo e maior eficiência.</p>
+<p><strong>Recomendação estratégica:</strong> Parar de ofertar para inativos antigos e dobrar investimento em comunicação para engajados e navegadores.</p>
+<hr />
+<p><strong>Elaborado por:</strong> ABA 📊 — Analista de Business Analytics<br />
+<strong>Data:</strong> 10/Mar/2026<br />
+<strong>Versão:</strong> 2.0 (completa com MAU App)</p>
+<footer style="margin-top: 60px; padding-top: 20px; border-top: 1px solid #E5E7EB; text-align: center; color: #6B7280; font-size: 0.9em;">
+    <p><strong>ABA 📊</strong> — Analista de Business Analytics | PicPay</p>
+    <p>Gerado em 10 de Março de 2026</p>
+</footer>
+</body>
+</html>

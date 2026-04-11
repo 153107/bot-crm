@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPIC — Análise de Aquisição</title>
+    <style>
+        @page { margin: 2cm; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            color: #21A366;
+            border-bottom: 3px solid #21A366;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        h2 {
+            color: #2563EB;
+            margin-top: 30px;
+            border-left: 4px solid #2563EB;
+            padding-left: 15px;
+        }
+        h3 { color: #6B7280; margin-top: 20px; }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        th {
+            background-color: #21A366;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        tr:nth-child(even) { background-color: #F9FAFB; }
+        tr:hover { background-color: #F3F4F6; }
+        blockquote {
+            background: #FEF3C7;
+            border-left: 4px solid #F59E0B;
+            padding: 15px 20px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #92400E;
+        }
+        code {
+            background: #F3F4F6;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #1F2937;
+            color: #F9FAFB;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code { background: transparent; color: inherit; padding: 0; }
+        @media print {
+            body { max-width: 100%; padding: 0; }
+            h1 { page-break-before: always; }
+            h1:first-of-type { page-break-before: avoid; }
+            table { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+<h1>📊 EPIC — Análise de Aquisição: Ofertas vs Engajamento</h1>
+<p><strong>Período:</strong> Snapshot atual (ofertas ativas) + Últimos 30 dias (MAT)<br />
+<strong>Data do relatório:</strong> 10/Mar/2026<br />
+<strong>Analista:</strong> ABA (Analista de Business Analytics)</p>
+<hr />
+<h2>🎯 Objetivo da Análise</h2>
+<p>Entender o panorama dos usuários com ofertas ativas EPIC e identificar alavancas de aquisição para aumentar a taxa de conversão do produto alta renda.</p>
+<p><strong>Hipótese de Negócio:</strong> Grande parte dos usuários com oferta ativa não estão engajados (Não-MAU), criando uma barreira de conversão.</p>
+<hr />
+<h2>📈 Resumo Executivo</h2>
+<h3><strong>Principais Achados:</strong></h3>
+<ol>
+<li><strong>71% dos usuários com oferta ativa EPIC não transacionaram nos últimos 30 dias</strong> (282 mil de 397 mil)</li>
+<li><strong>96% dos Não-MAT são cadastros antigos</strong> (2+ anos na base)</li>
+<li><strong>69% estão inativos há mais de 1 ano</strong> (195 mil usuários)</li>
+<li><strong>17% nunca transacionaram</strong> na plataforma (49 mil usuários)</li>
+<li><strong>Quando ativos, 52% usavam PIX</strong> (P2P e P2B) como produto principal</li>
+</ol>
+<hr />
+<h2>1️⃣ Diagnóstico: Ofertas vs Engajamento (MAT)</h2>
+<h3><strong>📊 Panorama Geral</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Métrica</th>
+<th>Volume</th>
+<th>% do Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Total de Usuários com Oferta Ativa</strong></td>
+<td>397.329</td>
+<td>100%</td>
+</tr>
+<tr>
+<td><strong>Com MAT (transacionando últimos 30d)</strong></td>
+<td>115.117</td>
+<td><strong>28,97%</strong></td>
+</tr>
+<tr>
+<td><strong>Sem MAT (não transacionando)</strong></td>
+<td>282.212</td>
+<td><strong>71,03%</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>💡 Insight Crítico:</strong> A hipótese do time de produto está <strong>validada</strong>. Mais de 2/3 da base de ofertas está inativa, o que explica a dificuldade de aquisição.</p>
+</blockquote>
+<hr />
+<h2>2️⃣ Perfil dos Não-MAT (282 mil usuários)</h2>
+<h3><strong>2.1 Tempo de Cadastro na PicPay</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Faixa de Tempo</th>
+<th>Total de Usuários</th>
+<th>% do Total</th>
+<th>Média de Dias</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0-30 dias</td>
+<td>18</td>
+<td>0,01%</td>
+<td>24 dias</td>
+</tr>
+<tr>
+<td>31-90 dias</td>
+<td>358</td>
+<td>0,13%</td>
+<td>67 dias</td>
+</tr>
+<tr>
+<td>91-180 dias</td>
+<td>295</td>
+<td>0,10%</td>
+<td>144 dias</td>
+</tr>
+<tr>
+<td>6m-1 ano</td>
+<td>1.632</td>
+<td>0,58%</td>
+<td>300 dias</td>
+</tr>
+<tr>
+<td>1-2 anos</td>
+<td>9.385</td>
+<td>3,33%</td>
+<td>559 dias</td>
+</tr>
+<tr>
+<td><strong>2+ anos</strong></td>
+<td><strong>270.524</strong></td>
+<td><strong>95,86%</strong></td>
+<td><strong>2.038 dias (~5,6 anos)</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>💡 Insight:</strong> O problema <strong>não é aquisição recente</strong>. São usuários antigos da base que perderam engajamento ao longo do tempo.</p>
+</blockquote>
+<hr />
+<h3><strong>2.2 Tempo de Inatividade (Última Transação)</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Faixa de Inatividade</th>
+<th>Total de Usuários</th>
+<th>% do Total</th>
+<th>Média de Dias Inativo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>31-90 dias atrás</td>
+<td>17.428</td>
+<td>6,18%</td>
+<td>55 dias</td>
+</tr>
+<tr>
+<td>91-180 dias atrás</td>
+<td>8.797</td>
+<td>3,12%</td>
+<td>130 dias</td>
+</tr>
+<tr>
+<td>6m-1 ano atrás</td>
+<td>11.678</td>
+<td>4,14%</td>
+<td>273 dias</td>
+</tr>
+<tr>
+<td><strong>1+ ano atrás</strong></td>
+<td><strong>195.077</strong></td>
+<td><strong>69,12%</strong></td>
+<td><strong>1.549 dias (~4,2 anos)</strong></td>
+</tr>
+<tr>
+<td><strong>Nunca transacionou</strong></td>
+<td><strong>49.232</strong></td>
+<td><strong>17,45%</strong></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>💡 Insight:</strong> Quase 70% estão <strong>dormentes há mais de 1 ano</strong>. São usuários com baixíssima probabilidade de reativação orgânica.</p>
+</blockquote>
+<hr />
+<h3><strong>2.3 Produtos Mais Usados (Quando Ativos)</strong></h3>
+<p><strong>Top 15 Produtos no Histórico dos Não-MAT:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Produto</th>
+<th>Usuários Únicos</th>
+<th>Total de Transações</th>
+<th>% dos Usuários</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PF (PIX P2P)</strong></td>
+<td>120.662</td>
+<td>3.286.402</td>
+<td>51,79%</td>
+</tr>
+<tr>
+<td><strong>BIZ</strong></td>
+<td>90.232</td>
+<td>1.374.134</td>
+<td>38,73%</td>
+</tr>
+<tr>
+<td><strong>BILLS (Boletos)</strong></td>
+<td>74.401</td>
+<td>1.062.384</td>
+<td>31,93%</td>
+</tr>
+<tr>
+<td><strong>P2P_EXTERNAL_SAME_PIX</strong></td>
+<td>71.690</td>
+<td>1.122.432</td>
+<td>30,77%</td>
+</tr>
+<tr>
+<td><strong>P2P_EXTERNAL_PIX</strong></td>
+<td>56.148</td>
+<td>1.711.873</td>
+<td>24,10%</td>
+</tr>
+<tr>
+<td><strong>PRO</strong></td>
+<td>54.217</td>
+<td>580.206</td>
+<td>23,27%</td>
+</tr>
+<tr>
+<td><strong>ECOMMERCE</strong></td>
+<td>50.167</td>
+<td>355.019</td>
+<td>21,53%</td>
+</tr>
+<tr>
+<td><strong>P2B_EXTERNAL_PIX</strong></td>
+<td>48.536</td>
+<td>1.249.850</td>
+<td>20,83%</td>
+</tr>
+<tr>
+<td><strong>TEF</strong></td>
+<td>44.313</td>
+<td>511.067</td>
+<td>19,02%</td>
+</tr>
+<tr>
+<td><strong>TED_CASHOUT</strong></td>
+<td>42.690</td>
+<td>297.752</td>
+<td>18,32%</td>
+</tr>
+<tr>
+<td><strong>P2M</strong></td>
+<td>36.598</td>
+<td>456.183</td>
+<td>15,71%</td>
+</tr>
+<tr>
+<td><strong>RECARGA_DE_CELULAR</strong></td>
+<td>29.443</td>
+<td>304.035</td>
+<td>12,64%</td>
+</tr>
+<tr>
+<td><strong>DIGITALGOODS</strong></td>
+<td>28.069</td>
+<td>210.650</td>
+<td>12,05%</td>
+</tr>
+<tr>
+<td><strong>P2P_INTERNAL_PIX</strong></td>
+<td>22.218</td>
+<td>129.262</td>
+<td>9,54%</td>
+</tr>
+<tr>
+<td><strong>MOBILITY</strong></td>
+<td>17.601</td>
+<td>848.697</td>
+<td>7,55%</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>💡 Insight:</strong> Quando ativos, esses usuários eram <strong>heavy users de PIX</strong> (P2P e P2B somados = 52% de penetração). Também tinham comportamento diversificado (Boletos, BIZ, PRO, E-commerce).</p>
+</blockquote>
+<hr />
+<h2>3️⃣ Segmentação dos Não-MAT para Priorização</h2>
+<p>Com base nos dados, podemos segmentar os 282 mil Não-MAT em <strong>3 grupos estratégicos</strong>:</p>
+<h3><strong>🔴 Grupo 1: Inativos Profundos (69% — 195 mil usuários)</strong></h3>
+<ul>
+<li><strong>Perfil:</strong> Última transação há mais de 1 ano</li>
+<li><strong>Característica:</strong> Dormência crítica, baixíssima probabilidade de reativação</li>
+<li><strong>Recomendação:</strong> <strong>Não priorizar</strong> para aquisição EPIC. Foco em reativação geral da plataforma antes.</li>
+</ul>
+<h3><strong>🟡 Grupo 2: Inativos Recentes (13% — 38 mil usuários)</strong></h3>
+<ul>
+<li><strong>Perfil:</strong> Última transação entre 31 e 180 dias</li>
+<li><strong>Característica:</strong> Ainda têm memória da plataforma, janela de oportunidade</li>
+<li><strong>Recomendação:</strong> <strong>Priorizar</strong> com campanhas de reengajamento antes de ofertar EPIC.</li>
+</ul>
+<h3><strong>⚪ Grupo 3: Nunca Ativos (17% — 49 mil usuários)</strong></h3>
+<ul>
+<li><strong>Perfil:</strong> Cadastrados mas nunca transacionaram</li>
+<li><strong>Característica:</strong> Barreira inicial não superada (KYC, primeira transação, confiança)</li>
+<li><strong>Recomendação:</strong> <strong>Não priorizar</strong> para EPIC. Foco em onboarding básico.</li>
+</ul>
+<hr />
+<h2>4️⃣ Alavancas de Aquisição Recomendadas</h2>
+<h3><strong>🎯 Alavanca 1: Focar nos 29% Já Engajados (Com MAT)</strong></h3>
+<p><strong>Ação:</strong> Priorizar comunicação para os <strong>115 mil usuários que já transacionam</strong>. Eles já estão ativos, têm oferta, e precisam apenas do "empurrão final" para converter.</p>
+<p><strong>Táticas:</strong>
+- Push notification in-app personalizado
+- Email marketing com benefícios claros do EPIC
+- Banner destacado no app (home, extrato, PIX)
+- Campanha de cashback condicional (adere ao EPIC = 2% cashback nos próximos 30 dias)</p>
+<p><strong>Potencial:</strong> Se convertermos 20% desse grupo, teríamos <strong>23 mil novas contratações</strong> (vs taxa atual de conversão muito baixa).</p>
+<hr />
+<h3><strong>🎯 Alavanca 2: Reativar os Inativos Recentes (13% — 38 mil)</strong></h3>
+<p><strong>Ação:</strong> Criar jornada de reativação <strong>antes</strong> de ofertar EPIC. Precisam voltar a transacionar para então considerar o produto alta renda.</p>
+<p><strong>Táticas:</strong>
+- Campanha de cashback "Volte e Ganhe" (R$ 10 no primeiro PIX)
+- SMS/WhatsApp para base que autorizou contato
+- Oferta de isenção de tarifas por 30 dias
+- Integração com Open Finance (se aplicável) para trazer saldo de volta</p>
+<p><strong>Potencial:</strong> Se reativarmos 30%, teríamos <strong>11 mil usuários voltando ao MAT</strong>, aumentando a base elegível para EPIC.</p>
+<hr />
+<h3><strong>🎯 Alavanca 3: Refinar Critério de Ofertas (Scoring Preditivo)</strong></h3>
+<p><strong>Ação:</strong> Criar modelo de propensão para <strong>parar de ofertar EPIC</strong> para quem tem baixíssima chance de converter (Grupo 1 e 3).</p>
+<p><strong>Benefícios:</strong>
+- Reduz "poluição" da base de ofertas
+- Melhora taxas de conversão reportadas
+- Libera esforço de comunicação para público qualificado</p>
+<p><strong>Critérios para Score Baixo (não ofertar):</strong>
+- Inativo há mais de 365 dias <strong>OU</strong>
+- Nunca transacionou <strong>OU</strong>
+- Menos de 5 transações no último ano</p>
+<p><strong>Potencial:</strong> Eliminaria ~244 mil usuários da base de ofertas (~61%), concentrando esforços nos 153 mil com maior potencial.</p>
+<hr />
+<h2>5️⃣ Recomendações Priorizadas</h2>
+<h3><strong>P0 — Implementar Imediatamente (Próximos 7 dias)</strong></h3>
+<ol>
+<li><strong>Campanha focada nos 115 mil Com MAT</strong></li>
+<li>Push in-app + Email + Banner home</li>
+<li>Meta: 20% de conversão = 23 mil contratações</li>
+<li>
+<p>KPI: Taxa de abertura (push/email), cliques, contratações</p>
+</li>
+<li>
+<p><strong>Dashboarding de acompanhamento</strong></p>
+</li>
+<li>Criar painel diário: Ofertas Ativas / Com MAT / Sem MAT / Conversões</li>
+<li>Alerta se % Sem MAT subir acima de 75%</li>
+</ol>
+<hr />
+<h3><strong>P1 — Próximas 2 Semanas</strong></h3>
+<ol>
+<li><strong>Jornada de Reativação para Inativos Recentes (38 mil)</strong></li>
+<li>Campanha "Volte e Ganhe" com incentivo financeiro</li>
+<li>
+<p>Meta: 30% de reativação = 11 mil voltando ao MAT</p>
+</li>
+<li>
+<p><strong>Modelo de Propensão v1 (Regra Simples)</strong></p>
+</li>
+<li>Criar flag <code>epic_elegivel</code> na base de ofertas</li>
+<li>Critério: <code>(ultima_tx &lt; 365d) AND (total_txs_vida &gt; 5)</code></li>
+<li>Aplicar filtro nas próximas rodadas de oferta</li>
+</ol>
+<hr />
+<h3><strong>P2 — Próximo Ciclo de Planejamento (1-2 meses)</strong></h3>
+<ol>
+<li><strong>Modelo de Machine Learning para Propensão</strong></li>
+<li>Features: tempo inativo, produtos usados, TPV histórico, geo, idade</li>
+<li>Target: conversão EPIC (últimos 6 meses)</li>
+<li>
+<p>Deploy em produção para scoring em tempo real</p>
+</li>
+<li>
+<p><strong>Teste A/B: Comunicação Segmentada</strong></p>
+</li>
+<li>Grupo A: Mensagem genérica EPIC</li>
+<li>Grupo B: Mensagem personalizada por produto histórico (ex: "Você usa muito PIX, o EPIC tem cashback turbinado em PIX")</li>
+<li>Medir taxa de conversão</li>
+</ol>
+<hr />
+<h2>6️⃣ Impacto Estimado</h2>
+<p><strong>Cenário Conservador (próximos 30 dias):</strong>
+- Alavanca 1 (Com MAT — 20% conversão): <strong>+23 mil contratações</strong>
+- Alavanca 2 (Reativação — 30% reativam → 10% convertem): <strong>+1,1 mil contratações</strong>
+- <strong>Total:</strong> <strong>+24,1 mil novas contratações EPIC</strong></p>
+<p><strong>Receita Incremental (MRR):</strong>
+- 24.100 contratações × R$ 49,90/mês = <strong>R$ 1.202.590/mês</strong> (+R$ 14,4M/ano)</p>
+<hr />
+<h2>7️⃣ Próximos Passos Analíticos</h2>
+<h3><strong>Análises Complementares Necessárias:</strong></h3>
+<ol>
+<li><strong>Cruzar com MAU App</strong> (aguardando acesso à tabela)</li>
+<li>Validar se Não-MAU também são Não-MAU App</li>
+<li>
+<p>Entender se o problema é ausência de transação OU ausência de acesso ao app</p>
+</li>
+<li>
+<p><strong>Análise de Contratações Históricas</strong></p>
+</li>
+<li>Pegar quem contratou EPIC nos últimos 6 meses</li>
+<li>Ver quantos eram Não-MAU no momento da contratação</li>
+<li>
+<p>Entender jornada: o que os reativou antes de contratar?</p>
+</li>
+<li>
+<p><strong>Análise Geográfica e Demográfica</strong></p>
+</li>
+<li>Cruzar Não-MAT com perfil (idade, renda, região)</li>
+<li>Identificar bolsões de oportunidade (ex: alta renda concentrada em SP/RJ)</li>
+</ol>
+<hr />
+<h2>📎 Apêndices</h2>
+<h3><strong>A.1 — Queries Executadas</strong></h3>
+<p><strong>Query 1: Cruzamento Ofertas x MAT</strong></p>
+<pre><code class="language-sql">WITH ofertas_ativas AS (
+    SELECT DISTINCT consumer_id
+    FROM picpay.epic.offers
+    WHERE offer_status = 'ACTIVE'
+),
+mat_30d AS (
+    SELECT DISTINCT consumer_id
+    FROM picpay.all_transactions
+    WHERE DATE(created_at) &gt;= DATE_SUB(CURRENT_DATE, 30)
+      AND DATE(created_at) &lt; CURRENT_DATE
+      AND is_approved = TRUE
+)
+SELECT 
+    COUNT(DISTINCT o.consumer_id) AS total_ofertas,
+    COUNT(DISTINCT m.consumer_id) AS com_mat,
+    COUNT(DISTINCT CASE WHEN m.consumer_id IS NULL THEN o.consumer_id END) AS sem_mat
+FROM ofertas_ativas o
+LEFT JOIN mat_30d m ON o.consumer_id = m.consumer_id
+</code></pre>
+<p><strong>Query 2: Tempo de Cadastro</strong></p>
+<pre><code class="language-sql">-- Ver arquivo completo no repositório de análises
+</code></pre>
+<p><strong>Query 3: Tempo de Inatividade</strong></p>
+<pre><code class="language-sql">-- Ver arquivo completo no repositório de análises
+</code></pre>
+<p><strong>Query 4: Produtos Históricos</strong></p>
+<pre><code class="language-sql">-- Ver arquivo completo no repositório de análises
+</code></pre>
+<hr />
+<h3><strong>A.2 — Fontes de Dados</strong></h3>
+<ul>
+<li><code>picpay.epic.offers</code> — Ofertas EPIC ativas</li>
+<li><code>picpay.all_transactions</code> — Transações consolidadas (MAT)</li>
+<li><code>picpay.consumers.consumers</code> — Cadastro de usuários</li>
+</ul>
+<hr />
+<h3><strong>A.3 — Definições</strong></h3>
+<ul>
+<li><strong>MAT (Monthly Active Transactioners):</strong> Usuários que realizaram ao menos 1 transação aprovada nos últimos 30 dias</li>
+<li><strong>Não-MAT:</strong> Usuários que não transacionaram nos últimos 30 dias</li>
+<li><strong>Oferta Ativa:</strong> Status <code>'ACTIVE'</code> na tabela <code>epic.offers</code></li>
+<li><strong>MRR (Monthly Recurring Revenue):</strong> R$ 49,90 por contratação ativa EPIC</li>
+</ul>
+<hr />
+<p><strong>Relatório gerado por:</strong> ABA (Analista de Business Analytics) 📊<br />
+<strong>Contato:</strong> heloisa.baccoli@picpay.com<br />
+<strong>Última atualização:</strong> 10/Mar/2026</p>
+</body>
+</html>

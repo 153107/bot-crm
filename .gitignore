@@ -1,0 +1,6 @@
+.DS_Store
+*.pyc
+__pycache__/
+.env
+results/growth-crm/relatorio_fechamento_marco2026.html
+results/growth-crm/relatorio_growth_crm_marco2026*.html
