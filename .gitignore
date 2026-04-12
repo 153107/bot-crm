@@ -27,3 +27,7 @@ query.json
 schema_disparo.json
 daily_now*.log
 run_daily_now.py
+
+# Results locais na raiz (cópias de trabalho)
+/results/
+.DS_Store
